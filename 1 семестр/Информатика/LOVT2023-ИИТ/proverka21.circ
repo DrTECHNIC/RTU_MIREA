@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="proverkaChip21"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="proverkaChip21">
+    <a name="circuit" val="proverkaChip21"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <rect fill="none" height="101" stroke="#000000" stroke-width="2" width="161" x="50" y="50"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="85" y="69">Значение</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="86" y="85">функции F</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="177" y="69">Правиль-</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="166" y="84">ность</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="77" y="131">Номер</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="82" y="145">Варианта</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="165" y="133">Входной </text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="173" y="145">набор для F</text>
+      <polyline fill="none" points="52,90 211,90" stroke="#000000"/>
+      <polyline fill="none" points="49,120 209,120" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="134" y="103">PROVERKA (C)</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="140" y="118">(16bit special microchip)</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="63" y="104">С</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="196" y="102">Var</text>
+      <circ-port height="8" pin="50,360" width="8" x="46" y="66"/>
+      <circ-port height="8" pin="110,400" width="8" x="46" y="126"/>
+      <circ-port height="10" pin="930,60" width="10" x="205" y="125"/>
+      <circ-port height="10" pin="950,130" width="10" x="205" y="55"/>
+      <circ-port height="10" pin="960,270" width="10" x="205" y="75"/>
+      <circ-port height="8" pin="50,260" width="8" x="46" y="96"/>
+      <circ-port height="10" pin="950,180" width="10" x="205" y="95"/>
+      <circ-anchor facing="east" height="6" width="6" x="107" y="47"/>
+    </appear>
+    <wire from="(580,400)" to="(700,400)"/>
+    <wire from="(490,180)" to="(740,180)"/>
+    <wire from="(330,240)" to="(330,310)"/>
+    <wire from="(80,220)" to="(270,220)"/>
+    <wire from="(700,260)" to="(700,400)"/>
+    <wire from="(310,220)" to="(490,220)"/>
+    <wire from="(120,140)" to="(120,150)"/>
+    <wire from="(450,250)" to="(570,250)"/>
+    <wire from="(670,120)" to="(730,120)"/>
+    <wire from="(630,260)" to="(630,330)"/>
+    <wire from="(750,120)" to="(790,120)"/>
+    <wire from="(650,260)" to="(650,350)"/>
+    <wire from="(250,160)" to="(250,240)"/>
+    <wire from="(790,120)" to="(830,120)"/>
+    <wire from="(580,380)" to="(680,380)"/>
+    <wire from="(840,180)" to="(840,200)"/>
+    <wire from="(80,170)" to="(120,170)"/>
+    <wire from="(80,150)" to="(120,150)"/>
+    <wire from="(670,120)" to="(670,200)"/>
+    <wire from="(140,130)" to="(180,130)"/>
+    <wire from="(580,390)" to="(690,390)"/>
+    <wire from="(50,360)" to="(470,360)"/>
+    <wire from="(400,120)" to="(400,400)"/>
+    <wire from="(810,260)" to="(810,470)"/>
+    <wire from="(810,140)" to="(830,140)"/>
+    <wire from="(600,260)" to="(600,300)"/>
+    <wire from="(670,260)" to="(670,370)"/>
+    <wire from="(310,240)" to="(330,240)"/>
+    <wire from="(80,220)" to="(80,260)"/>
+    <wire from="(720,260)" to="(720,420)"/>
+    <wire from="(930,270)" to="(960,270)"/>
+    <wire from="(580,370)" to="(670,370)"/>
+    <wire from="(250,240)" to="(270,240)"/>
+    <wire from="(580,350)" to="(650,350)"/>
+    <wire from="(810,140)" to="(810,260)"/>
+    <wire from="(240,160)" to="(250,160)"/>
+    <wire from="(620,260)" to="(620,320)"/>
+    <wire from="(520,280)" to="(520,470)"/>
+    <wire from="(580,360)" to="(660,360)"/>
+    <wire from="(870,130)" to="(950,130)"/>
+    <wire from="(180,60)" to="(180,120)"/>
+    <wire from="(470,240)" to="(470,360)"/>
+    <wire from="(740,260)" to="(740,440)"/>
+    <wire from="(450,250)" to="(450,320)"/>
+    <wire from="(150,170)" to="(210,170)"/>
+    <wire from="(580,330)" to="(630,330)"/>
+    <wire from="(80,260)" to="(80,330)"/>
+    <wire from="(690,260)" to="(690,390)"/>
+    <wire from="(580,340)" to="(640,340)"/>
+    <wire from="(790,280)" to="(890,280)"/>
+    <wire from="(520,280)" to="(560,280)"/>
+    <wire from="(580,320)" to="(620,320)"/>
+    <wire from="(180,60)" to="(930,60)"/>
+    <wire from="(80,130)" to="(80,150)"/>
+    <wire from="(80,150)" to="(80,170)"/>
+    <wire from="(520,470)" to="(810,470)"/>
+    <wire from="(180,130)" to="(180,150)"/>
+    <wire from="(590,260)" to="(590,290)"/>
+    <wire from="(640,260)" to="(640,340)"/>
+    <wire from="(140,120)" to="(180,120)"/>
+    <wire from="(470,240)" to="(570,240)"/>
+    <wire from="(710,260)" to="(710,410)"/>
+    <wire from="(670,200)" to="(840,200)"/>
+    <wire from="(840,180)" to="(950,180)"/>
+    <wire from="(400,120)" to="(440,120)"/>
+    <wire from="(110,400)" to="(400,400)"/>
+    <wire from="(180,150)" to="(210,150)"/>
+    <wire from="(730,260)" to="(730,430)"/>
+    <wire from="(50,260)" to="(80,260)"/>
+    <wire from="(580,430)" to="(730,430)"/>
+    <wire from="(80,130)" to="(110,130)"/>
+    <wire from="(580,300)" to="(600,300)"/>
+    <wire from="(330,310)" to="(350,310)"/>
+    <wire from="(580,440)" to="(740,440)"/>
+    <wire from="(580,310)" to="(610,310)"/>
+    <wire from="(540,230)" to="(570,230)"/>
+    <wire from="(790,120)" to="(790,280)"/>
+    <wire from="(660,260)" to="(660,360)"/>
+    <wire from="(580,120)" to="(670,120)"/>
+    <wire from="(490,180)" to="(490,220)"/>
+    <wire from="(680,260)" to="(680,380)"/>
+    <wire from="(80,170)" to="(80,220)"/>
+    <wire from="(80,330)" to="(350,330)"/>
+    <wire from="(580,410)" to="(710,410)"/>
+    <wire from="(740,130)" to="(740,180)"/>
+    <wire from="(610,260)" to="(610,310)"/>
+    <wire from="(810,260)" to="(890,260)"/>
+    <wire from="(580,420)" to="(720,420)"/>
+    <wire from="(580,290)" to="(590,290)"/>
+    <wire from="(380,320)" to="(450,320)"/>
+    <comp lib="6" loc="(991,323)" name="Text">
+      <a name="text" val="Диагностика ошибок"/>
+    </comp>
+    <comp lib="0" loc="(950,130)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="3" loc="(870,130)" name="Comparator">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(950,180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(50,360)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(930,60)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(879,100)" name="Text">
+      <a name="text" val="Результат оценки 1 - правильно"/>
+    </comp>
+    <comp lib="1" loc="(240,160)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="4" loc="(310,220)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(960,270)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(99,347)" name="Text">
+      <a name="text" val="Вход логической функции"/>
+    </comp>
+    <comp lib="1" loc="(380,320)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="4" loc="(570,240)" name="Shift Register">
+      <a name="length" val="16"/>
+    </comp>
+    <comp lib="1" loc="(750,120)" name="Controlled Buffer">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(540,230)" name="Constant"/>
+    <comp lib="1" loc="(150,170)" name="NOT Gate"/>
+    <comp lib="0" loc="(110,400)" name="Pin">
+      <a name="width" val="12"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="4" loc="(140,120)" name="Counter">
+      <a name="width" val="4"/>
+      <a name="max" val="0xf"/>
+      <a name="ongoal" val="stay"/>
+    </comp>
+    <comp lib="4" loc="(580,120)" name="ROM">
+      <a name="addrWidth" val="12"/>
+      <a name="dataWidth" val="16"/>
+      <a name="contents">addr/data: 12 16
+abc7 a79e b237 5ab7 9b1d 9979 733b 1bb3
+9b5c 2777 b879 6774 a66d d639 1b97 ed55
+b6dc 8977 6d56 b747 2b6e e674 57ea cba9
+3997 74de d4e5 7d38 6c3e e687 d4be 27d5
+dcd4 6739 36e5 7a17 3e8e bc35 e5ce 7d16
+5e1b ccab 65eb db1c 4bc7 6277 5ec7 1cdd
+d237 3b47 8e77 363b 63b6 d5b3 d1e5 9a6d
+b61d 7d71 37ce 7c3b 66b3 6b57 e669 6c3d
+8e6b e9c5 9ee5 6677 7d53 e83e dc63 cd74
+b95b 64e7 b8ce d6d1 d8dd 4cb7 a6e7 9acb
+4dc7 e83b 6667 4ce7 b5ba 2767 be95 bee1
+31ee 57a5 e933 b86e dc5d 78b9 3d5d ed33
+d9ec d369 7e45 68de aea7 4dce b6c6 72ad
+eca6 a36e e7a5 bde1 ccb6 3bd2 dc2e ede2
+dba5 3d72 eb1a 3c9e 4b97 e4c7 5795 eaba
+ce3b 7d4d ce4e ab9d 69b7 a337 ed1b b95c
+6b53 ba8e 7e78 7333 e9c6 c72d a2be dd4d
+39b7 5657 734d 947b 3e78 ea5c 1dd9 ab6a
+d687 13be 9ad5 d539 aabd bc5b ccec 9abc
+36e9 19dd 9bcc 935d 9dae ea3a 43db d5d3
+3ba6 17cb 6a5e 9a77 dab3 ed8a e3c6 7bd4
+b99e b2bb 98bd b87d 96ea ac5e 74e6 abd3
+17c7 e6c7 6abb ce35 963d ba97 8d5d ebaa
+eae4 e72a 8ee3 b6d1 cd6d b9b5 75b2 d5a3
+c4dd a95d 9e4b 6b69 d953 7e1d 1677 eb95
+e4cb b2ab 39bd c9bd c66e 976a 5877 9a6b
+45d7 77a1 a6be 973d de8b 2a7e e1d5 7e29
+b5a7 bcd6 5b72 e761 35ea 7aa7 e716 54d7
+55da bb94 c9b5 63de 1eee bce3 7c1d b78e
+d39a 6aba 6d87 ade6 d5e1 dc5a 53eb 7caa
+5da5 39d9 6d71 e6e6 5d95 99bb e4d6 aae7
+c17e 1dc7 da4e 2d57 7937 b574 35e9 4b3d
+edc4 d58b 3abe 97ac aeca ecb3 ada3 e56a
+53ed 975e 365e b99b 5cbb 27bd 89de 6dc9
+b539 b1d5 731d e877 4eea 7663 2e77 eb2e
+7857 1b9d 93e5 2797 ee96 375e eee4 abd1
+b967 ec1b ab3a 667c 2e6e 1ece 7ae2 d723
+5b3c 7c3d dae1 b38d 5d57 a96d eae9 9ee2
+93da ee1c 7969 791d de95 796c add5 6979
+b4b9 d68b 547d d4cd cdad 4577 7d94 979b
+d547 1d67 c78e 51db 73a6 5dcb ce4d 6cdd
+dd2a 739d 93ed da5d e5cd 7735 eaae 2bb3
+9ad9 b7e1 acb5 89d7 35cb b7d8 3be9 bb13
+a8db 57b6 e937 e3ca 49bd 2d3b d75a 7b4b
+b673 d3c3 b19d 3787 d8be b57c e2e5 daae
+9d97 5aae c5bc d67c 3379 3cec c6a7 7c5e
+c9b3 b6b8 a4de c17b e9ca a1be d2ea d197
+d92e 7c76 ec97 ab36 23bd 2e75 ce8d b1a7
+db38 eb3a 667d c5b5 5b1b 7963 7d9c 2ebb
+92b7 87a7 2be9 6bab 7de8 955e 3d8d b6e2
+c87e 9ae9 7715 bb61 665d e66b eee2 719d
+39b9 d693 3e8d 6676 bda1 3abd ab6b e5b5
+8d6b 9cd5 baae 7768 655b b4e5 8ae7 bad3
+a7da d6ba e9d1 5bd5 dd92 4b9d 27b9 b51d
+adaa 7a6e ad63 2bbb 1dec 765d 29bb b359
+7da2 3796 6b4b a4dd 1b5b 76ac 13dd acdc
+dd3c 7d13 e667 8eab 6cb5 e5e8 66de 3975
+5756 795c 36a7 4d3d e59a b71a 5dad c5a7
+e972 a35b 357e 1d5e 6b96 6e66 967a 4db3
+bec3 cb2d 9be8 cdc7 7d1b 1dbc ab9e 953b
+7ea8 abb9 5a9e 77c6 8d57 d764 3d9b de17
+3db4 66ce 587d 6ecc dc6e 7365 87e7 6a5b
+d9cd 754d c99e ee85 979d 37b9 1767 7719
+77a2 dad4 7727 5b1d dc79 c7a7 b297 9dab
+c5eb d1b5 7479 9ada 7ea9 d2ae b4ea a3ec
+337d 799e 66ba a3e7 58d7 b5a3 78ba 3d3b
+65c7 45b7 d179 e973 557c 8ee9 7556 3b6d
+7dc1 95dc cd75 dbb4 7e66 ab3d aee5 71b6
+5b76 ed43 aba6 63b9 d91b 357b 3177 b7c8
+9dd8 db51 9eda 6ed9 3e5d ab27 7179 33de
+6de4 3e8b 5797 ecea ea4b e3e6 3ea3 e927
+bc73 d87c d333 36dd 7a8b a37d 47d7 a3e5
+d978 3567 7367 bce5 b2e3 9eab 3b3d 3b96
+3dcb 4777 a6ba bd9c 769d 7363 54be d4c7
+b72e 277b c3ab 7bc1 8e67 6ba7 c7d9 6b75
+d6d3 ab7c caec 3ecc 19be bd16 43bb 75a9
+b387 4d79 ce1b d963 877c 6bb2 971d 7c99
+e5ea 9e87 97c3 89ee ea4e 6cd7 66dc b3ea
+e857 dc7a c65e 3cb5 663d b9d3 b9d1 bb91
+ba78 b74e 4bb5 d565 95b3 1e9b b66a cd7c
+89e7 bad6 bab5 7bc6 b2a7 936d 7b64 56d9
+ee3a 6dc5 5766 8e73 2bd3 71d5 6ec9 74cb
+33e7 3cd6 95ed 6e4e 5dae 1d97 d93e 9d65
+a5bb aae6 dd4e d6ad e477 ee92 ead2 8bbc
+b93a cb53 c97d 71db dae9 a6cd dd34 eb8d
+7731 de51 78e7 a55d e475 b33c ad5a d758
+4a7e 59da 7e32 e9dc a667 72be d5b1 be16
+d45b ee36 e8be 7acd e8b7 4c77 dbca 3cbd
+e2ce e5d6 87ed b4cd b4d5 e2de da5a 5977
+57da 5be1 747e e666 bb19 6b72 1bdb 1d7c
+b7e4 2c7d 678e 137b a99d 4ebd ed99 bd6a
+e17a e997 be25 37b8 25de 7756 b9b6 91de
+91eb b3ac 9576 c95b e25d 7d36 89bb 74b6
+5e2d d83e 6bb5 b2ec d713 36d3 657d 9ed8
+7567 9c7b ab65 bca9 a4ed b4e6 2d3e 17be
+9dcd dc95 7a6c e137 1ad7 47db e5b4 4e3d
+e52e 8eee b5e1 de5c 7876 bd56 dd9c a67e
+736a 75b3 2d67 1a7e 6abc ebd1 ba33 e65d
+9bdc 9747 267b 355d 76ca b8d7 e5c6 7566
+5a76 bd35 73cc 63cb 7ec2 6d63 c79b 7636
+ecb9 55cd e5b2 a6ad 9d6b 6dca d66e 95eb
+e563 d1b9 e2cd 636b 79b8 9bc9 97ea ca6d
+36ae 98b7 5e5b 9776 7c6a 755c cb6c 67e3
+4edb db71 a8be 98e7 7275 c96e e96c a5b9
+6e6a 7e39 e94b 763b 8de3 2edb e745 ecce
+d363 a33e 3c7b e76a 33ea dba1 9bd6 b36e
+6c7b 4dee ccce 3de1 eda4 5b6a 2d76 2e67
+1de5 e52d 74ad dca3 db56 7d92 e26d ac6d
+a6ed 798e aeaa 7637 dd8c 67b9 4cdb b9b8
+e696 cd87 8eec cd96 69dd d9b3 1e75 76a9
+eb71 d1ab 9ce3 b9c6 bb65 bc7c 63d7 96b7
+ebd4 6e6d bda5 e1e9 9787 dc66 a7e3 2a77
+be8e 8ec7 cd79 aaae e533 695b d5cd 1b7e
+7157 d66a dee8 74e7 b6e3 ea17 9675 cb6b
+bda3 197e b56e 9cd3 9877 83d7 ea1e 7d2b
+acd9 baa3 a8bb de3a 4dea c3e6 c9e6 a57c
+e729 1e5e eec2 8dcd b3b2 db13 e9b8 e4e6
+e787 b2cb 876d ded8 b798 753b 799c 55d3
+6e39 c373 ebc6 97d3 273e bb2e 9bd8 7d89
+7a59 4aeb d9aa 56ed d667 adcb b933 59e6
+57d6 ca73 d2b9 2775 ead4 596d bb3a 7d49
+ce5e cbe5 ce65 17d3 4ced dae2 971e dd38
+8ceb e956 687e 6ad6 76c3 4d9d c7d5 7ce6
+b4d6 5dba e6b8 7c67 27d3 5eca d715 d726
+dc17 6b65 b955 bd6c 957e 3ce9 796d 5c7e
+5b9b 5e4b 8bea 8e5d 9b5e 9db3 7ae5 97e1
+3b67 bba3 bac6 3d97 e6a7 7dc4 71be ea5b
+d8d6 ee8a be4b d7e8 dc5e c6ba 656e 6ba6
+d6a6 cd71 7aac e575 6ea5 4ed9 4eee 8b7a
+ba6e 7b99 b665 d957 3766 6976 b98b e9b4
+957a ce59 72ae b1be 979e e6ae 747b 66b5
+29bd de16 6e65 e4eb 7ec4 d32d e4ad dd58
+eb32 7754 669d 6de5 c3d5 5cb7 3b8e 1a7d
+33b9 593e 13db b5a9 b3a9 d2bd 64eb 53ba
+1dd7 a976 7ba6 d4d9 7917 abc5 7975 25ed
+d1d5 3dc3 9c3b ec5d eba5 2ad7 cb3b c75b
+7273 4b37 9b69 67b1 b99a 9c79 64be 9eb3
+aadc 33d7 c1d7 ea87 bd4e eea3 aea6 7a9d
+3795 5e74 78b7 26bd be27 8dda 3a3e b5d8
+e999 9657 99ba 93d7 6cec 5cdd 58eb b92b
+8bba 7ed2 eb53 c47e 6e67 476b 27e9 abad
+8d9e bc7a 6cd9 26b7 be72 6bda c6ae e789
+75b1 cdb9 aae5 bd8d 9e17 27b7 6e95 378b
+764e 5c9d 3be8 d653 db25 766b 9aeb e5c9
+ec72 9eb2 e763 79e8 4de9 b5c5 d745 3abc
+bd2a ab2b ba2b d74d 653e dbb8 59d6 665b
+2b37 da2d 6dcd d13e 9d73 ede1 a27b ed46
+c657 b5b4 17db 3ed5 e671 9b2b 76b9 a33d
+e63d 7366 79da b8cd 7e8c 647d eba3 8d73
+b927 339b 4dbb ac7d c737 2ee7 7bb4 3ad6
+de26 e38b b8d9 9bbc 7ca3 3e69 32e7 7927
+bc4e b939 798b 553d 4ebc be74 6b1e ac37
+a7bc b9c5 6d27 dde8 e738 aeb4 ee6a 3575
+759c ce8b 97ca a27e b9ba 4ddb 4b7d 7ea3
+bb58 7b33 e3ba 2d79 1dba 7e68 637e ab87
+d78b 67ba 573e e29b b7e8 1db9 add9 734e
+d31d 3d76 57e5 ceb1 5cb3 c7e5 b733 69ad
+bd68 33e3 ebca a4db b2b5 b669 dc96 633d
+e9ac 9cd9 69cb bc4d a4e7 e9e2 6b8d e3e4
+ec5e 547e 6d6b eee8 ba36 b335 d38d dcb4
+e747 49d7 d768 ccdb ec75 13ee 3b3b 37c9
+376e e95c 5e67 eacc 5975 7c27 e61e 87d3
+8677 d6a3 3b1b de2b dd4a 796e 3a6e c9b9
+ce78 9edc 73cb 3ecb 339e bd66 97b4 a97a
+56cb adc6 ba66 7792 61dd 6573 3e73 e8e3
+b2ee 5ce7 cab9 87ba 76e2 b653 55db 99de
+dd26 9c97 783b 7c66 87ce dad6 d567 c973
+d7b1 47b3 ec3a e6b3 9cb9 36ea d719 d65e
+3d79 a3ab 66e7 559e 97ad 3eca 7753 d57a
+29dd 37e5 6d55 e3e5 b771 99ce 733a ed78
+c577 5b57 673a 7987 b87b 6b9b 573a caae
+ca7a ed1a 5d39 57ba e4d7 33dc 7bc9 e8b9
+a769 ed9c 7aba c3e9 ba4d 3de6 3ada bd74
+3d27 5cde b1e5 95e7 9b75 c57c ae7a cd6a
+bed2 e7d8 3755 58bd 7947 3de9 7ce3 b7c9
+8dde 7729 363e c7e9 9799 85bd ce97 d3aa
+87e3 13bb 3bbc bbd1 bd23 47ec aa7e e2e6
+4775 57b4 e762 75e4 68bb c4eb e6ac 7771
+beb4 7cae d5c5 5e8d deb1 e9cd ec7c a39b
+4cbe 8b9b d337 a477 5b35 d6c7 a677 6bd4
+3b59 763d 3a76 b8dd e59d e73a 53e7 35b3
+db83 5a97 ea8b 7ae9 897e a7d3 acde 85de
+52ee a2dd 7cba 6da3 bc47 b8db dcca ccd7
+c5b9 8abb 5b6d 6c7e e4d5 a9e5 23be 72ab
+d7ac d353 a76a 2b75 5e2b e59b 9e5c b53d
+e39b 76e1 b679 9a76 15e7 357d 1ee6 9377
+b6c5 3d3c ce66 9ec9 5bd4 dce1 ec4e 517e
+1d7b b6e6 36ee e9aa d897 ad6e 7573 6d2b
+797a 4d5b 2db6 759a 3ab5 5c9e 5aad 5679
+b867 5d4e baa9 dce4 a37e 69e5 6eb3 e3b4
+2ed5 4eba a5ee 2cdb a7ab ab8b 37ab 3b65
+be9c b6aa 1d77 766d e796 dd55 dd47 ecc5
+e5e6 ae87 a753 a3d3 cb9d d1da e2bb 6d4b
+3767 23eb d571 2bee dba8 3eec 37ac 7656
+6be4 abc6 b4ee 73b5 bba9 8bb6 33ad e8dd
+6ad7 b5b5 7d45 a977 7be4 de4a 7725 7c35
+aad5 bc8d b3e9 9adc 63ba ad72 b4d3 ad3a
+773c b92d 7356 b566 d1c7 8bcd 8bda 9a7a
+e94e be91 ba47 d5d6 ee33 4db5 6b59 969b
+9b4d 46bb e2a7 5ba7 aeb5 94b7 7576 b59a
+a775 974b b43d 9d1b 1d75 cece ea27 da3c
+b8b7 627d 16bb bc9d 7571 6c77 8dab 96cb
+b279 7b6a 2cb7 1b7c 6bdc 5be2 a7ca d756
+e87a 4377 d9c5 45eb b33b ecb2 a6e9 acd5
+d573 b3d4 7a74 15bb dd52 59e5 5e36 765b
+ee54 1bd5 e65a 1b7b e9d4 e695 ae37 791e
+7ab1 55e3 d47e 73e2 d3d3 1bc7 3ee4 dc6a
+d2b6 b997 7ac3 1d3b cea3 dc69 63ea ceea
+35db 3e66 d276 e61b 59b3 e53c 79b3 e29d
+ad4b 4bad bd62 bacb 7378 dc6d 1dae cb73
+b993 56ad cd2d e3aa cdbc 1ddd 7dd1 3adb
+da95 9dcb b1d3 3b5d 35b7 36ba d8cb 9c75
+6cbc cab7 ae6d 535e a2d7 e497 c3b6 39e5
+dcc9 7527 1ed3 e4ae 7536 4be7 7b66 2b79
+97e6 7c5d 9b65 a657 d62e 6e6e 37ec aa97
+76ad 9ea3 6bb9 4b77 69eb cd17 92db 774a
+cbd1 79e4 e3b3 b785 bc79 a375 393b dcdc
+713e d587 c779 b26b ecec 789b d3b6 d6d9
+ee2e 3c75 aacb cce5 57d3 bb78 29b7 cb17
+8ddc cde3 367a a9e6 ce73 e53d 3eb8 5ecb
+c5e3 d4ab b93e ea73 93ad e678 b3ab be59
+da5c b5ea 3ba3 3b4d 3eb9 73a9 b63d d9ea
+655d 5cee d556 cae6 99d3 abcb cdc3 57ce
+e15e d3b3 eb45 e6b2 cce3 a9be 94eb 3dca
+ed16 9ee8 c753 7177 ba59 353b 7769 da4d
+e8dc 5ee3 47ba 57b1 e378 85be 6793 c4bb
+71ab aab7 be87 d327 d7a1 6bac 74da eb74
+ae96 d65a 5dc7 e473 3776 6e79 6877 36ad
+5dd1 d732 d2e6 cb9b abe2 75e6 bba5 daab
+87cd e63a 9ae7 b43e b7d1 cdd4 eae8 e969
+5d5d d396 bc9e 35ee d357 72b7 ab76 772e
+e86b e8ae 7a75 ed23 c9ee 9bd9 6eb6 a77c
+7799 e55d c7b2 bbac e74b 5ab9 aaed 96e5
+67cb b937 8ed9 b4cb ea99 77e8 dc8d c5c7
+aa7d 5c7c b7ca 9c6e 9be4 52dd 5597 8d7d
+56db 3e59 eba6 c6cd 7d3a 79b9 75b5 2eb7
+6de1 e5b9 e3d3 1ebb 5da7 b8ed a7e9 26be
+d96e aee8 cabc c5ae 6d72 55d7 347d 7da8
+457b bb4b cd47 baba 6dae 437d 5e66 aee3
+d5b2 ce9b 937a 8dd5 72da a1bb a6c7 d56e
+b339 dd46 cee6 eaab e95a cb5a 7c78 dad5
+47cb 66ab 2776 553b bd55 53db 3da3 3aba
+4d7e 7ada d789 ee6c 157e ed89 b8e5 56ec
+aece db39 77e2 9ade bea9 7639 ecd2 693d
+3ab6 7297 8bbd bae2 35dd a973 547b 37d6
+3367 d35d dae6 e996 bb27 79e1 1ded a6a7
+e7e4 c5da b39e 7ca6 d43e d23d e2ab 66bd
+7a47 e33e 77e4 c4d7 adab c3b5 2de3 4b7e
+9db1 de59 4b7c 97a3 ecb6 91bd 8beb 64d7
+65e9 ae36 cbb1 dd59 ee31 32ed 5e5a 73d8
+54bb 3d1d a9e7 6957 ce8e 2b5d 743d 477d
+7457 5d2d 4ee3 b2ce e9c7 53e5 5e69 beca
+c5ed 6e1b dcd6 4eb3 b567 b2e6 89eb acbb
+55bb ee94 cee5 d9e3 eb54 59dc e39c b936
+3da6 d157 e74e 9de1 7b26 d63b 65cb d5b8
+5b55 9d9d bd36 b3d1 b1dd 7357 965e e7b4
+d7a5 727d 1e37 57a6 53bb 6d47 4e73 ba67
+7a3b e679 bcda bb3c ace7 636e c2db cd5b
+dd23 cb8d 675b 5a7c 6975 7cd4 78ae 379d
+5b67 d9e1 3b7a 35da e7b1 ce9d 5bab 7d2d
+2b7c 93dd 7ba9 738b a37a 5e71 5abc de9a
+bb2c 9add 6797 eb19 6e9b ceba e79a e55a
+4b3e 77b2 5e6d ce2b bac5 933e 479e 7397
+e56b cc37 736d 33ec d371 b65d aeb9 4dae
+23e7 eb68 d593 adb4 9e27 9db2 9d56 6d17
+35ad 31be b74d ea7c ce93 cd72 976c 5779
+da9d e719 e6ba 97e4 bcc9 765e 74b3 e6b4
+d937 59be 397b cd8e b957 bd91 656d ad5b
+6ea9 da3b 6a3d 3677 31bd 4abd 7b71 ea5a
+a9ba 9c7e 653d e31d adb8 bcb3 99b6 7a5d
+78cd cde5 972d eea6 877d 5ee4 ee78 69dc
+7d5c ce55 3793 b6d2 c937 1bec 1ed7 ee49
+46ee e725 e966 b2d6 7dd8 c2dd 47ee 717c
+55ed 7bca ca77 ec8b 2eec 8be5 b1da b13e
+3d7c bd19 917b e8eb b25e 27b6 327e e2da
+e8de c775 59ec 17ec d2bc 2cbd 4bd5 5e76
+2ed9 eb85 75b6 596b 37d8 a72e d8d7 aab6
+76b4 eda8 7db1 45de ade5 ed34 ae33 9973
+be1b 9b87 7897 e5c3 2ade 177c 4dda 6d5d
+b62b 7b2d 4767 d1b3 ddb2 7ecc 737c 9dac
+b39b 696d db85 e5e3 37e6 e791 5d6d eac5
+789e 5bac cde9 7cb8 5b87 a65b cc75 55d5
+7d1c eac3 e87d 5de4 6a77 9abb b35b 27de
+9be5 7537 b277 9b76 ee2c 4e5d c997 cb79
+9ee3 737a ed3a be3a ddac ad53 e9cb dab5
+4ea7 ed1e e2ae 7a35 ee71 9ec3 7579 5d5b
+e35e 6a67 8dbb db3a 1dd6 bd52 bb89 e1cb
+5277 d5c6 de78 a9bc ba2e 597a e697 4ee7
+bcb5 b732 a97b e9c3 9db5 e876 b969 87ea
+4add ebc4 c73d d9b5 8d7c 3b6a a9ae 9dc9
+a7e4 e336 38db 3dd5 ebc5 bb35 3d93 6c57
+75d1 3d17 6d6a 83ed 8db7 8e9b 17ee 37bc
+d79c 76d2 abe3 7d93 7a79 c5ab b959 64ee
+3756 25bb 57b5 daa5 d5cc 8bde 79b6 627b
+e715 573b 7e87 32be ed8d 336d e3b5 9cbb
+a7a3 b572 bc8e a7e2 cbb9 ea6d e5e2 ad7c
+73c6 b3e4 ce57 e576 a4bb 1e97 3d96 75d2
+9aa7 74a7 b9d5 6796 9dca ad87 79a5 a3bb
+d6a9 dd83 7a6d 3976 d3ac cb71 e3cb 8bdb
+d17b cbd5 da6c 6ed1 be6a 7ee1 4eb7 d36b
+3d69 e74d a39e 9ae6 5e55 43de ed61 bc1b
+b5e8 ee86 ee2d a6b6 b2b7 dd89 674d 6aad
+4ebb db1e 2bbe e99c da17 e578 1bea 336b
+eb89 85eb 7e8d 9ed9 6be6 e53a 6bd1 d659
+26dd 1b7a 7e2b c7b3 3e2b aabc d8c7 be85
+7b51 ae9d bbc5 399e 1bb9 6d3c eb99 5d78
+7ad2 32dd 87d6 7e46 a95b ad35 4d77 35e7
+e66e 761e 51bd 4de6 9b78 1bb6 b8d6 b68e
+43be 69d5 cd93 35ab 7cb5 d1cb 353d e7cc
+6db1 aea3 d7e2 db23 2eda d96b 64bd dc39
+71bc aaad 85e7 ad9b 8b5d bac7 e6e3 367c
+d697 393e 4eae 3bd6 cdb8 5dc5 9d47 5a7d
+e3c9 7e9a bd99 3dd6 ec39 ce72 17b3 475e
+7c56 7ab6 e9bc ad2e cb33 cd78 d927 e8ee
+78d6 3bd5 d366 7653 79d4 6a3e 4e75 c5bd
+e4bc 3db9 dce2 dcb3 7ac5 ba93 d98e 57ab
+778b cd65 3cea aa76 7c5b b5e2 8e7c 5b8e
+eecc 6ba9 9aea 65e7 e653 479b 56d6 9d66
+7ed4 27bb d796 c6e5 eb36 deaa 5de1 955d
+eb27 bab2 d947 d766 73c9 8ebb 29ee 175b
+ab35 6dc7 4dcd 3727 6aa7 ccb5 7785 e527
+b3d5 eba4 89be 47b6 dd29 eb3c 764d 969e
+b5e3 7b4e 566e c3ed 4bee 5c37 7276 e6a5
+6d95 8b6d d25e 2dea 64ed b95a 999e 99be
+36b3 76d4 a5b7 d85b 91be e9a5 79b5 d771
+d475 e98d 539e d3d4 6bea 9b95 d9b8 674b
+ab8e 5739 94db d7c3 15dd 66e5 79ce d5b6
+5d67 6d9c e5a3 17bd 7277 e1bb 76a5 5733
+b437 7ad9 717d beb1 179d dad8 b873 e36e
+e375 3637 d477 d6cd 8b3b ec65 ea39 1776
+1be6 35b9 db4d b1d7 e78d 7736 e1ea 176b
+7c4e 974d e16e 5de9 1b3e 78b6 ea5d cead
+d8ea 7794 567b e5d1 ea4d cb1e 66dd da9a
+c739 b2be 5dea 5a73 c6e7 c3de ec3e 2abe
+87ae d4e6 b7a5 dec3 ce3d dd65 76c5 b749
+e8c7 6bc7 7553 5db5 6772 aec7 d2c7 5ece
+5eae 93d3 ad4e 8777 3bae ee52 d53c bb52
+d3c5 5e9d d63d cae7 6e3e ccba 56ae d8b9
+63ee bd5c e177 8bab 13b7 c9cb 1add eae3
+a675 e5e5 b55d b563 7c3c 9d9e 556e ab72
+b3b4 e26b e979 ea93 1eba a73c 39cd e6b6
+a9b5 995b a53e d4e3 743e 9376 5d79 3e2d
+d6d6 7b85 e51b a7ac b29b b1e9 b9e6 dcbc
+eb2b 76ab aacd 3779 72e3 d62b 7cd8 5ba9
+bc9c 735a 5717 13bd 7b4d b676 bec4 b477
+67ce e753 b13d e723 dcea ec3c 3bb3 34be
+b9ca 3e93 3e63 16e7 6d1b cdd5 7e27 4beb
+bc1e 9b33 b2ad d672 5759 d457 9d4d 5e79
+e5b3 ee32 97b3 ccd9 6799 d64d e393 6375
+4ecd 2b67 e6d1 669b c3ea 2bdb 5697 9ad7
+43ee 6e1d 9bd5 1eab 7b54 ce5c ec79 7acc
+c4b7 eb4c b8eb 56cd d51e 3bab daa6 75a7
+eba9 ecae e3d8 72ce a2bd ab53 dd19 6aea
+c27e 73ec 6733 eabc b726 ab71 b365 5dce
+7ec3 d399 b72b b974 66db bd1d d837 ec3d
+db19 d37a d769 57cc 5bec b533 acc7 db62
+57ac badc c3da 57b8 74ae ee51 59ae bca5
+55dc 78db 8e5b 3e5b d974 e8ad bcb1 5677
+a797 e55b 8b67 5ed9 6dcb 333e 1e57 387e
+7959 ec6d ce17 7a27 bb33 ee47 b5ae 9cea
+7cb2 adcc 7676 eba2 7716 e4cd 7d96 98bb
+d5ca b3e6 bc4b a5da cce6 8add 7d69 4b57
+b527 dd36 d1bc 9adb 639d da72 ad5c 1e77
+cb7a c8db a78d a376 ae71 7e52 6ee6 c9e5
+9ce6 c573 d2d3 ab9c 9a57 4ba7 e4b9 476d
+577a d59b 4dba caea 37e2 a75c cda3 39db
+1d76 e4db cdae 572b a736 b27c 2e5e e76c
+aecb e75a a6ab 87ab 66e9 7b8d bd4c 72cb
+9b3c dc5b 9b71 55d9 bb8c cd6e 4e6e 9b36
+ba74 c3cb d1bd e3ea 7d43 45ee 5ade 57e4
+2ebe 35de 6759 b2dd e51d 9d3b aecd 7517
+bc6e 73d9 9e67 8d7a 8d76 ad1e dda4 a35d
+ddc5 7b17 3c79 be4e b9ce 69ab ced1 3657
+3e5e 7a65 c979 bc69 d676 d933 9d69 db53
+2ce7 32db 5db4 6c37 d6e3 7c9d bab8 77b1
+6d66 b3ca ab59 669e 3ddc 2eee 96e9 e5a7
+ebe1 db35 b6ba c5b7 ec3b 71d7 ce37 175e
+49be 61bb 536e 75ec 7ae6 4bbe b656 cd59
+59ed ee9c e7c2 e17d d997 79b1 a9a7 bcbc
+bb72 e54b 5737 745b 52bd 397e c6bc 9e8e
+dea6 c7d4 5cab 9e53 9d37 95da b7d2 7b32
+4ceb dca6 da73 ba3c eeb8 ee1d 787d b76c
+55ec 47b7 5d7c 65b5 e7c1 b98e 67c6 aee4
+27da e5aa abe4 791b 2db3 beb2 6c79 9c67
+c5ad a5ad 7a1e e7d4 d3a3 dda9 edb2 69b5
+b35c c59d 3d3a ca3b 65b7 7eb1 ac97 716d
+7b68 cb37 375c 7c5a 2db7 a747 a5d3 ea9b
+77ca cbd8 aea5 6da9 35ba 57cd 6cbe 53c7
+17ae e6ea a776 5bba bbb1 65ea 9b17 2e79
+6a3b 5e4e dca5 bd46 d3ae 3e35 2bba 36b9
+eb72 e2cb ce79 3e96 de93 59dd 79e6 7e65
+a9d9 d9ad 8ee5 72e9 bb32 eec8 eb96 9cdc
+9bb6 1c7b 7957 3e55 a4eb 9e76 1e9e 4eb9
+59d5 675d 7e4d ea66 b3dc b2e7 677a d9c6
+d365 4cbb 37c7 37a7 2b73 b5cc 633b ce67
+3772 1e7b 54ee 767c d33c 72dd 9b6d 9d78
+7555 34ee 27ea 67da 873e d335 755d 578d
+e947 b791 ede4 72cd 1ced 6a73 cb7c 976e
+9d2e 5ae7 a6ee e55c 7337 5a6b 5be5 26d7
+3ed1 d69b 57a3 e85e e657 17ad e95d b357
+e96d 2ece 378e d576 78ea b6b1 99d9 7dd2
+d53e ee5a 3cdc ebb4 ae2d 7ac6 d761 5ace
+db87 1eb3 743b b2bc 6d9b 1dce 5e9b aada
+d5d9 5e5c 7387 7aa5 63b3 d734 c99b be23
+5b71 c375 ee56 b79a b7ac 7cc7 bb15 e6cb
+6b17 ba3a cdb5 d6d2 74be d733 6bd5 53e3
+cd9d 47de ecca 9bea 7d8c 79ea dcb2 6e57
+c637 c17d 51ee 799b a779 1de6 6c9b cb74
+c72b 68eb c4de 3cba bbd8 a799 b761 bcb4
+579b 8b7b b39c 8cbb b98d 9796 e749 63d9
+e3da 7ba3 bbc9 e379 95e3 537b e57a e1bd
+7c8d 5d5a 7bc5 8d3e ceaa 6d8b be56 8bb3
+7b94 ec66 3be3 9e6a aae9 e39a d987 ec27
+4deb 9bec c76d 6eaa b96a 6dd8 9eaa 974e
+c6c7 dc3b 36dc 783d bec6 a7b8 6cb9 da93
+eaa7 a6b3 e86d ee8b e4da a367 3d8b 1ee5
+27ec 3d67 bd2b 7b5a 95bc 37a3 53dd bd4a
+e8cb 97c7 197d 3bca 32eb 6b2b 6787 d9ab
+db27 8ebc b1dc d794 7e4c cdb6 7783 b1c7
+ec67 e536 6cdb b9a5 1bd6 beac 66d5 b8da
+5763 5d69 53cb dd62 5eb6 7c6e d9cb 3dc9
+dac7 a4ee 4db9 6b76 6e8d 5b69 9e37 9e2b
+ee15 b6a9 5cdb a756 b571 a765 6557 59ee
+d96c dca7 d1d6 7c79 b3da ddc9 597d 7596
+e6d4 67dc 774b 1bd7 eccc 9e79 87de aed3
+dab8 b475 d1be 6ae9 b8ec da71 e2d5 2a7d
+6ed3 9b73 6cea 7bd8 3bd9 2bda 57b9 5b6e
+6dda e567 569e 9975 6dd9 d799 5ce6 367d
+727b e596 d86b a3cb c7e2 cdc5 5bb9 b66d
+ac76 3aec b9ea 873b adac a69b 366b 7565
+75d5 dc73 8cdb 79e3 6b55 ae59 6ae5 8e6e
+a8eb 2b3e c74e bc57 b766 5771 6cba 8dba
+d555 bde2 8776 d92b b64d 2b9d d774 e34d
+97ec db86 e31b 7cc9 6ecb e89d e792 d54e
+713b 3763 7d85 7ba1 de56 3a77 5b1e 6c6d
+97b2 54eb 5b8d 2ebd 7da9 6ce3 5c73 3e72
+adc7 17dc 5c77 374e 6dcc 6bbc 347e 2d9b
+736e bdb4 7ad1 76d5 3e47 6737 d79a 47d6
+75cb 7a3a 7e94 eb58 b71b d33e d6ce 92ee
+9b4e be1d 96ba bc6c b51e b69e c76c 72e5
+2d5d 8d77 e975 66e3 7aea 257d c33d c65d
+7372 b71e abb8 6ed8 758b b36a e3a6 e5d9
+457d ac9b 5ab5 a6b5 75e3 6e56 aabe d9b9
+cd3c dd4b d5c9 5b5c 36b7 3a3d 72de ab78
+4bea 6be1 9d53 b87c 6dd2 3ba7 59ab 395d
+47ae 93b7 7d83 27e5 58de 56e7 9dc7 d8ec
+cbc7 87b5 56de e897 3d2e c3b9 7cd1 6e5c
+ec55 e37c 996b eccb 79ad a7d6 4e37 be98
+3e3a cd37 ed2a d787 6a57 ba63 abba 3357
+ad56 9d9a d795 7793 c9dc 7b91 7672 7c95
+c2d7 b1ab d8da 5ea9 657c cd5e 6bc9 cadc
+73d4 766e 5acd 7eb4 53d6 e387 6bb1 ce5d
+7a37 b2e5 cccd 61bd d959 69e3 bd5a 76d1
+3d4e b177 5c7b 7257 ed9a ed32 ceb8 36be
+b5c6 d5a7 3b5a 55e6 c567 d49d bc3d d279
+857d 74ec aed8 c6db 2cdd 7b5c da78 d355
+72e6 ba8b bcc7 bc17 eb1d d3cc dc1d 7b39
+7e64 933d 376b 51ed 1977 16eb 99db e54d
+8be6 59b7 d5ad cbe8 7c74 5537 b38b 85d7
+3769 c75d bc56 792e dce9 3753 74bc 7cda
+46dd be83 cbcb e734 8775 716b db9a d98b
+67a7 3d2b 67ca b93c 6ceb eba8 d4bc c3db
+9a5d c99d baa5 7aad c56e d569 b4ed c9db
+dd8e 7cab b674 ae6c d559 beaa 9b6c 6c76
+67cc e46d 95d6 b783 c1bb d5a6 5dab ec1e
+b7a2 dc2d 9957 a9ab b13b add1 87d7 ad3e
+578e c53d 757c e9a6 6eb1 6755 abca c7e4
+17cd cc76 ab5d b176 dc65 ca6b 5bdc 9bb8
+37e9 29be 7877 477c dbcc 9aee d68d 55ea
+7d95 1b57 6b3d 73b9 b69d 6dac dba6 5767
+86e7 5c79 5773 d4ec 9e74 54b7 d8d5 e61d
+c55d 5e65 d72a ddb1 6b4d 26ee dc67 a4be
+db92 d9d8 c6bb 7d3c b7c2 be36 b8c7 95ae
+b6cb 57d9 e179 a5ec b8d5 cbe6 1d9d d32b
+67b3 6d75 66da 267d 2eb9 adb1 67ac e46e
+897d d972 d7b8 5b97 a87d dab9 d61d d8e3
+756c bb1c 95b5 65ec 35e6 aaa7 cacd 3b2b
+b375 deb2 eea1 c67e b6ab 355b bb98 7665
+5573 7d8e db98 c3c7 9eb6 e6d9 3aed acec
+6eb4 c579 aee6 47ab c3d6 98db 5b27 65e6
+678d 5b3a b17d ba3b c9d3 e9b9 d5ce cd1d
+d731 2bae 55bd 5d93 5357 b3b5 7723 5da3
+e4be 5ca7 69ee 5b59 9e97 d2eb ad97 a7b2
+9779 7693 69ec 78be caad d78e 987e ee65
+ea1d 1eb9 75ca e731 9ea5 cd73 93ee 1ceb
+e99e 5d3d d9a9 56b5 3e9e ee2a ee46 c35b
+b64e 63bd 9b72 b754 9ecc eacd 87dc d71d
+9e7c 6b5b b3ec dd64 bdc2 9e47 ae5b 3d36
+7c9a a47e cb72 576c adb6 cd27 b1b3 b72c
+ad3d abbc 3e2e 1edd de68 ec8d ce76 b179
+67d2 9a3d 939e 3377 e785 ee4c d935 e37a
+de35 39bb e8d9 b39d 38be d3a7 9eb5 2bab
+4dbd dcd1 786b 6dd5 ad74 7ce5 ae95 cd55
+bc67 5b96 e7c8 a6d6 b9cb d1dc 1dee bd2d
+5d65 a97e 4bb6 2eea 3739 7ca7 2a7b c7ae
+7d87 37b3 76a6 d5c3 c9de b635 8bce cdd2
+de58 6dec ae97 7cc3 cd63 a6b9 71b9 dccb
+ad96 d72c ab1b 7369 3dbc 6bce bb49 ca5d
+33cd e967 edb1 35d6 b3d6 734b b457 d8ad
+5cd3 4bed 66cd 973e 53d7 4d97 da1b 795d
+749b 395b bdc5 5aeb bb5a d58d 4bec d575
+53bc 97d1 bbc4 add4 bb17 4dd6 abd8 ce71
+dc59 ebc1 b7a8 33eb b78a 7b16 3baa 697b
+6aed be99 da97 ea8d db4c 9337 d875 eb6a
+d965 dc4b e7c9 aed6 3ec6 d3d6 b58e 5d17
+9e35 b4e7 b36c 1bde ab56 cae9 3db1 78e3
+a7e1 b5a6 7a73 c379 ace3 7d23 2dcb 71ba
+6d8e 5778 31b7 2e57 62ed 96d6 8ead 71ec
+27e3 6b3a 9739 5e37 6a7b 9e4d dd93 1e73
+59bd b537 7747 53ce cb47 572d 1ce7 9bda
+db4b e43d 8d5b eda5 9e8d 5e2e a5ae e267
+d9b2 cbe3 a5bd
+</a>
+    </comp>
+    <comp lib="6" loc="(38,242)" name="Text">
+      <a name="text" val="C"/>
+    </comp>
+    <comp lib="0" loc="(560,280)" name="Splitter">
+      <a name="fanout" val="16"/>
+      <a name="incoming" val="16"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="6" loc="(853,37)" name="Text">
+      <a name="text" val="Входной набор для функции со счетчика"/>
+    </comp>
+    <comp lib="0" loc="(50,260)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(177,436)" name="Text">
+      <a name="text" val=" (Номер варианта - 1) как двоичное 10ти разрядное число"/>
+    </comp>
+    <comp lib="1" loc="(930,270)" name="XOR Gate">
+      <a name="width" val="16"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+  </circuit>
+</project>
