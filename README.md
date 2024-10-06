@@ -1,2 +1,2 @@
-# RTU_MIREA
-My practical work, which was done during my studies at RTU MIREA.
+# РТУ МИРЭА
+Мои практические работы по некоторым предметам, которые я выполнял в течение обучения в РТУ МИРЭА
