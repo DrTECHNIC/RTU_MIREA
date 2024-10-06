@@ -1,0 +1,12 @@
+|Prac1
+Y <= ABorCD_andADorBD.DB_MAX_OUTPUT_PORT_TYPE
+B => BD.IN0
+B => AB.IN1
+D => BD.IN1
+D => CD.IN1
+D => ABorCD_andAD.IN2
+C => CD.IN0
+A => AB.IN0
+A => ABorCD_andAD.IN1
+
+
