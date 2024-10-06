@@ -1,0 +1,8 @@
+SUBDESIGN 'Prac4'
+(
+A, B, C : INPUT;
+Y : OUTPUT;
+)
+BEGIN
+Y = (!A & !B & !C) %# (!A & !B & C) # (!A & B & !C) # (!A & B & C)% # (A & !B & !C) %# (A & !B & C)% # (A & B & !C) # (A & B & C);
+END;
