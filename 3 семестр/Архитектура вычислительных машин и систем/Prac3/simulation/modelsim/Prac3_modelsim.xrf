@@ -1,9 +1,0 @@
-vendor_name = ModelSim
-source_file = 1, C:/altera/13.1/practics/Prac3/Prac3.bdf
-source_file = 1, C:/altera/13.1/practics/Prac3/db/Prac3.cbx.xml
-design_name = Prac3
-instance = comp, \Y~output\, Y~output, Prac3, 1
-instance = comp, \A~input\, A~input, Prac3, 1
-instance = comp, \C~input\, C~input, Prac3, 1
-instance = comp, \B~input\, B~input, Prac3, 1
-instance = comp, \MUX8-1~0\, MUX8-1~0, Prac3, 1
