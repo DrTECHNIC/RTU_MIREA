@@ -1,0 +1,9 @@
+SUBDESIGN 'Prac4'
+(
+A, B, C : INPUT;
+D0, D1, D2, D3, D4, D5, D6, D7 : INPUT;
+Y : OUTPUT;
+)
+BEGIN
+Y = (D7 & A & B & C) # (D6 & !A & B & C) # (D5 & A & !B & C) # (D4 & !A & !B & C) # (D3 & A & B & !C) # (D2 & !A & B & !C) # (D1 & A & !B & !C) # (D0 & !A & !B & !C);
+END;

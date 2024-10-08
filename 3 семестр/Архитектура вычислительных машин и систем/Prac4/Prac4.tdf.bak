@@ -1,0 +1,8 @@
+SUBDESIGN 'Prac4'
+(
+A, B, C : INPUT;
+Y : OUTPUT; 
+)
+BEGIN
+Y = ('1' & not A & not B & not C) # ('0' & not A & not B & C) # ('0' & not A & B & not C) # ('0' & not A & B & C) # ('1' & A & not B & not C) # ('0' & A & not B & C) # ('1' & A & B & not C) # ('1' & A & B & C);
+END;
