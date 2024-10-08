@@ -1,0 +1,36 @@
+|Prac4
+A => _.IN1
+A => _.IN0
+A => _.IN1
+A => _.IN0
+A => _.IN1
+A => _.IN0
+A => _.IN1
+A => _.IN0
+B => _.IN1
+B => _.IN1
+B => _.IN0
+B => _.IN0
+B => _.IN1
+B => _.IN1
+B => _.IN0
+B => _.IN0
+C => _.IN1
+C => _.IN1
+C => _.IN1
+C => _.IN1
+C => _.IN0
+C => _.IN0
+C => _.IN0
+C => _.IN0
+D0 => _.IN0
+D1 => _.IN0
+D2 => _.IN0
+D3 => _.IN0
+D4 => _.IN0
+D5 => _.IN0
+D6 => _.IN0
+D7 => _.IN0
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
