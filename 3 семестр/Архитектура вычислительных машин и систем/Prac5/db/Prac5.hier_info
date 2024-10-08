@@ -1,0 +1,86 @@
+|Prac5
+Y <= lpm_mux0:inst1.result
+D7 => lpm_mux0:inst1.data7
+D6 => lpm_mux0:inst1.data6
+D5 => lpm_mux0:inst1.data5
+D4 => lpm_mux0:inst1.data4
+D3 => lpm_mux0:inst1.data3
+D2 => lpm_mux0:inst1.data2
+D1 => lpm_mux0:inst1.data1
+D0 => lpm_mux0:inst1.data0
+A[0] => lpm_mux0:inst1.sel[0]
+A[1] => lpm_mux0:inst1.sel[1]
+A[2] => lpm_mux0:inst1.sel[2]
+
+
+|Prac5|lpm_mux0:inst1
+data0 => lpm_mux:LPM_MUX_component.data[0][0]
+data1 => lpm_mux:LPM_MUX_component.data[1][0]
+data2 => lpm_mux:LPM_MUX_component.data[2][0]
+data3 => lpm_mux:LPM_MUX_component.data[3][0]
+data4 => lpm_mux:LPM_MUX_component.data[4][0]
+data5 => lpm_mux:LPM_MUX_component.data[5][0]
+data6 => lpm_mux:LPM_MUX_component.data[6][0]
+data7 => lpm_mux:LPM_MUX_component.data[7][0]
+sel[0] => lpm_mux:LPM_MUX_component.sel[0]
+sel[1] => lpm_mux:LPM_MUX_component.sel[1]
+sel[2] => lpm_mux:LPM_MUX_component.sel[2]
+result <= lpm_mux:LPM_MUX_component.result[0]
+
+
+|Prac5|lpm_mux0:inst1|lpm_mux:LPM_MUX_component
+data[0][0] => mux_9vc:auto_generated.data[0]
+data[1][0] => mux_9vc:auto_generated.data[1]
+data[2][0] => mux_9vc:auto_generated.data[2]
+data[3][0] => mux_9vc:auto_generated.data[3]
+data[4][0] => mux_9vc:auto_generated.data[4]
+data[5][0] => mux_9vc:auto_generated.data[5]
+data[6][0] => mux_9vc:auto_generated.data[6]
+data[7][0] => mux_9vc:auto_generated.data[7]
+sel[0] => mux_9vc:auto_generated.sel[0]
+sel[1] => mux_9vc:auto_generated.sel[1]
+sel[2] => mux_9vc:auto_generated.sel[2]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_9vc:auto_generated.result[0]
+
+
+|Prac5|lpm_mux0:inst1|lpm_mux:LPM_MUX_component|mux_9vc:auto_generated
+data[0] => _.IN0
+data[0] => _.IN0
+data[1] => _.IN0
+data[2] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN0
+data[4] => _.IN0
+data[4] => _.IN0
+data[5] => _.IN0
+data[6] => _.IN1
+data[6] => _.IN1
+data[7] => _.IN0
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[2] => result_node[0].IN0
+sel[2] => _.IN0
+
+
