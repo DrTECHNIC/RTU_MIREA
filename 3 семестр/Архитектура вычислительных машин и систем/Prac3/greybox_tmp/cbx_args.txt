@@ -1,0 +1,15 @@
+LPM_SIZE=8
+LPM_TYPE=LPM_MUX
+LPM_WIDTH=1
+LPM_WIDTHS=3
+DEVICE_FAMILY="Cyclone IV GX"
+data
+data
+data
+data
+data
+data
+data
+data
+sel
+result

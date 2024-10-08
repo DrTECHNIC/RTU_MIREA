@@ -1,0 +1,27 @@
+|Prac3
+Y <= MUX8-1.DB_MAX_OUTPUT_PORT_TYPE
+D7 => D7ABC.IN0
+A => D7ABC.IN1
+A => D5AnotBC.IN1
+A => notA.IN0
+A => D3ABnotC.IN1
+A => D1AnotBnotC.IN1
+B => D7ABC.IN2
+B => notB.IN0
+B => D6notABC.IN2
+B => D2notABnotC.IN2
+B => D3ABnotC.IN2
+C => D7ABC.IN3
+C => D5AnotBC.IN3
+C => D6notABC.IN3
+C => D4notAnotBC.IN3
+C => notC.IN0
+D5 => D5AnotBC.IN0
+D6 => D6notABC.IN0
+D4 => D4notAnotBC.IN0
+D2 => D2notABnotC.IN0
+D3 => D3ABnotC.IN0
+D1 => D1AnotBnotC.IN0
+D0 => D0notAnotBnotC.IN0
+
+
