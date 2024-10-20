@@ -1,0 +1,25 @@
+# do Prac6.do 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Prac6
+# 
+# Top level modules:
+# 	Prac6
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Prac6_vlg_sample_tst
+# -- Compiling module Prac6_vlg_check_tst
+# -- Compiling module Prac6_vlg_vec_tst
+# 
+# Top level modules:
+# 	Prac6_vlg_vec_tst
+# vsim -L maxii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.Prac6_vlg_vec_tst 
+# Loading work.Prac6_vlg_vec_tst
+# Loading work.Prac6
+# Loading maxii_ver.maxii_io
+# Loading maxii_ver.maxii_lcell
+# Loading maxii_ver.maxii_asynch_lcell
+# Loading maxii_ver.maxii_lcell_register
+# Loading work.Prac6_vlg_sample_tst
+# Loading work.Prac6_vlg_check_tst
+# Simulation passed !
+# ** Note: $finish    : Waveform.vwf.vt(205)
+#    Time: 1 us  Iteration: 0  Instance: /Prac6_vlg_vec_tst/tb_out
