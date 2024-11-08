@@ -30,6 +30,6 @@
 
 # Вариант 6
 - [1 ДЗ](https://github.com/DrTECHNIC/Shell_Emulator)
-- [2 ДЗ]()
+- [2 ДЗ](https://github.com/DrTECHNIC/Command_Line_Tool)
 - [3 ДЗ]()
 - [4 ДЗ]()
