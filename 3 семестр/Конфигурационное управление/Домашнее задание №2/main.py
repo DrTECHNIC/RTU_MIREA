@@ -14,11 +14,11 @@ def parse(config_file ="config.csv"):
                     paths[key] = value
     return paths["visualizer_path"], paths["repository_path"]
 
-def git_clone(repository_url, repository_path ="cloned_repository"):
+def git_clone(repository_url, repository_path):
     if not os.path.exists(repository_path):
         subprocess.run(["git", "clone", repository_url, repository_path], check=True)
 
-def get_commit_data(repository_path ="cloned_repository"):
+def get_commit_data(repository_path):
     os.chdir(repository_path)
     commit_data = {}
     result = subprocess.run(["git", "log", "--name-only", "--pretty=format:%H"], capture_output=True, text=True)
@@ -32,7 +32,11 @@ def get_commit_data(repository_path ="cloned_repository"):
                 commit_data[commit_hash] = set()
                 flag = True
             else:
-                commit_data[commit_hash].add(line.strip())
+                addline = ""
+                for i in line.strip():
+                    if i not in "!@\"#№$;%^:&?*(){}[]',":
+                        addline += i
+                commit_data[commit_hash].add(addline)
         else:
             flag = False
     return commit_data
@@ -63,5 +67,6 @@ def visualize(plantuml_text, visualizer_path, plantuml_path ="../dependencies.pu
 
 if __name__ == "__main__":
     visualizer_path, repository_url = parse()
-    git_clone(repository_url)
-    visualize(build_plantuml(get_commit_data()), visualizer_path)
+    name_of_repository = repository_url.strip().split('/')[-1]
+    git_clone(repository_url, name_of_repository)
+    visualize(build_plantuml(get_commit_data(name_of_repository)), visualizer_path)

@@ -1,1 +1,2 @@
-py main.py
+pip install pillow
+pip install -U pytest
