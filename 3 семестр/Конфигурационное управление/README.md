@@ -32,4 +32,4 @@
 - [Задание 1](https://github.com/DrTECHNIC/Shell_Emulator)
 - [Задание 2](https://github.com/DrTECHNIC/Command_Line_Tool)
 - [Задание 3](https://github.com/DrTECHNIC/Training_Configuration_Language)
-- [Задание 4]()
+- [Задание 4](https://github.com/DrTECHNIC/Assembler)
