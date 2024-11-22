@@ -29,7 +29,7 @@
 • [gitee.com](https://gitee.com/)
 
 # Вариант 6
-- [1 ДЗ](https://github.com/DrTECHNIC/Shell_Emulator)
-- [2 ДЗ](https://github.com/DrTECHNIC/Command_Line_Tool)
-- [3 ДЗ]()
-- [4 ДЗ]()
+- [Задание 1](https://github.com/DrTECHNIC/Shell_Emulator)
+- [Задание 2](https://github.com/DrTECHNIC/Command_Line_Tool)
+- [Задание 3](https://github.com/DrTECHNIC/Training_Configuration_Language)
+- [Задание 4]()
