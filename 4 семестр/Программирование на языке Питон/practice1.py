@@ -13,7 +13,7 @@ def pyshader(func, w, h):
 
 
 def func(x, y):
-    task4_ = 2
+    task4_ = 6
 
     # Задание 4.1
     if task4_ == 1:
@@ -60,7 +60,8 @@ def func(x, y):
     elif task4_ == 4:
         def noise(x, y):
             return (math.sin(x * 12.9898 + y * 78.233) * 43758.5453) % 1
-        return noise(x, y), noise(x, y), noise(x, y)
+        total = noise(x, y)
+        return total, total, total
 
     # Задание 4.5
     elif task4_ == 5:
@@ -86,8 +87,8 @@ def func(x, y):
             return value
 
         scale = 15.0
-        v = val_noise(x * scale, y * scale)
-        return v, v, v
+        total = val_noise(x * scale, y * scale)
+        return total, total, total
 
     # Задание 4.6
     elif task4_ == 6:
@@ -109,7 +110,8 @@ def func(x, y):
             n11 = noise(x1, y1)
             ix0 = n00 + (n10 - n00) * s
             ix1 = n01 + (n11 - n01) * s
-            return ix0 + (ix1 - ix0) * t
+            value = ix0 + (ix1 - ix0) * t
+            return value
 
         octaves = 5
         persistence = 0.5

@@ -27,14 +27,16 @@ def main(b, n):
 """def sum(b, c, k=1):
     if k > b:
         return 0
-    return (5 + 14 * (39 * k - c ** 2 / 37) ** 2 +
-            3 * (0.02 - 82 * c ** 2 - 10 * k)) + sum(b, c, k + 1)
+    else:
+        return (5 + 14 * (39 * k - c ** 2 / 37) ** 2 +
+                3 * (0.02 - 82 * c ** 2 - 10 * k)) + sum(b, c, k + 1)
 
 
 def mult(b, n, c=1):
     if c > n:
         return 1
-    return sum(b, c) * mult(b, n, c + 1)
+    else:
+        return sum(b, c) * mult(b, n, c + 1)
 
 
 def main(b, n):
