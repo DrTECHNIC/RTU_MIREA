@@ -10,7 +10,6 @@
         mult *= sum
     return mult"""
 
-
 # 2-е по популярности решение
 """from math import prod
 
@@ -22,6 +21,17 @@ def main(b, n):
                    for k in range(1, b + 1))
     return prod(calculate_sum(c) for c in range(1, n + 1))"""
 
+# 3-е по популярности решение
+"""from functools import reduce
+
+
+def main(b, n):
+    return reduce(
+        lambda acc, c: acc * sum(map(lambda k:
+                                     (5 + 14 * (39 * k - c ** 2 / 37) ** 2 +
+                                      3 * (0.02 - 82 * c ** 2 - 10 * k)),
+                                     range(1, b + 1))),
+        range(1, n + 1), 1.0)"""
 
 # Не существующее по популярности решение
 """def sum(b, c, k=1):
@@ -67,7 +77,6 @@ def main(b, n):
                     3 * (0.02 - 82 * c ** 2 - 10 * k))
         mult *= sum
     return mult"""
-
 
 if __name__ == "__main__":
     print("main(4, 6) ≈", main(4, 6))
