@@ -59,16 +59,7 @@ def main(n):
             return inner ** 3 - prev2 - prev1 ** 2"""
 
 # 5-е по популярности решение
-"""import math
-
-main = (lambda n:
-    -0.70 if n == 0 else
-    0.02 if n == 1 else
-    (lambda p2, p1: math.floor(1 + p2 + p1**3)**3 - p2 - p1**2)(
-        main(n-2),
-        main(n-1)
-    )
-)"""
+# Не нашёл
 
 if __name__ == "__main__":
     print("main(3) ≈", main(3))
