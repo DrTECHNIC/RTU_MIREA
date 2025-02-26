@@ -59,7 +59,17 @@ def main(n):
             return inner ** 3 - prev2 - prev1 ** 2"""
 
 # 5-е по популярности решение
-# Не нашёл
+"""from math import floor
+
+
+def main(n):
+    return (
+        -0.70 if n == 0 else
+        0.02 if n == 1 else
+        (lambda x: (floor(1 + x[0] + x[1] ** 3) ** 3 - x[0] - x[1] ** 2))
+        ([main(n - 2), main(n - 1)])
+    )"""
+
 
 if __name__ == "__main__":
     print("main(3) ≈", main(3))
