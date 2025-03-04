@@ -6,6 +6,7 @@
         sum += 65 * (56 * z[i - 1] - y[n - i] ** 3 - 61 * z[n - i] ** 2) ** 5
     return sum"""
 
+
 # 2-е по популярности решение
 """def main(y, z):
     n = len(y)
@@ -14,11 +15,22 @@
 
 
 # 3-е по популярности решение
-# Не найдено
+"""def main(y, z):
+    n = len(y)
+    i = 0
+    sum = 0
+    while i < n:
+        i += 1
+        sum += 65 * (56 * z[i - 1] - y[n - i] ** 3 - 61 * z[n - i] ** 2) ** 5
+    return sum"""
 
 
 # 4-е по популярности решение
-# Не найдено
+"""def main(y, z, i=0):
+    if i == len(y):
+        return 0
+    term = 56 * z[i] - y[len(y) - 1 - i] ** 3 - 61 * z[len(z) - 1 - i] ** 2
+    return 65 * (term ** 5) + main(y, z, i + 1)"""
 
 
 if __name__ == "__main__":
