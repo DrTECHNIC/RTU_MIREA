@@ -15,40 +15,36 @@
     return result_ro"""
 
 # 2-е по популярности решение
-# Пока что не найдено, но нижний вариант может быть рабочим, если его как-то изменить/доработать
 """def create_array_I(array_B):
-    return {3 * symbol_beta for symbol_beta in array_B
-            if symbol_beta < 57}
+    array_I = []
+    for symbol_beta in array_B:
+        if symbol_beta < 57:
+            array_I.append(4 * symbol_beta - symbol_beta)
+    return array_I
 
 
 def create_array_Z(array_B):
-    return {symbol_beta for symbol_beta in array_B
-            if (symbol_beta <= 88) ^ (symbol_beta >= -42)}
+    array_Z = []
+    for symbol_beta in array_B:
+        if (symbol_beta <= 88) ^ (symbol_beta >= -42):
+            array_Z.append(symbol_beta)
+    return array_Z
 
 
 def create_array_A(array_I):
-    return {symbol_yota % 3 - symbol_yota for symbol_yota in array_I
-            if (symbol_yota > -95) ^ (symbol_yota <= 72)}
+    array_A = []
+    for symbol_yota in array_I:
+        if (symbol_yota > -95) ^ (symbol_yota <= 72):
+            array_A.append(symbol_yota % 3 - symbol_yota)
+    return array_A
 
 
 def create_array_EPH(array_Z):
-    return {symbol_zeta for symbol_zeta in array_Z
-            if (symbol_zeta > -14) ^ (symbol_zeta <= 27)}
-
-
-def calculate_sum_1(array_EPH):
-    sum = 0
-    for symbol_phi in array_EPH:
-        sum += abs(symbol_phi)
-    return sum
-
-
-def calculate_sum_2(array_EPH, array_A):
-    sum = 0
-    for symbol_phi in array_EPH:
-        for symbol_alpha in array_A:
-            sum += symbol_phi * symbol_alpha
-    return sum
+    array_EPH = []
+    for symbol_zeta in array_Z:
+        if (symbol_zeta > -14) ^ (symbol_zeta <= 27):
+            array_EPH.append(symbol_zeta)
+    return array_EPH
 
 
 def main(array_B):
@@ -56,11 +52,13 @@ def main(array_B):
     array_Z = create_array_Z(array_B)
     array_A = create_array_A(array_I)
     array_EPH = create_array_EPH(array_Z)
-    sum_1 = calculate_sum_1(array_EPH)
-    sum_2 = calculate_sum_2(array_EPH, array_A)
+    sum_1 = sum(abs(symbol_phi)
+                for symbol_phi in array_EPH)
+    sum_2 = sum((symbol_phi * symbol_alpha)
+                for symbol_phi in array_EPH
+                for symbol_alpha in array_A)
     result_ro = sum_1 - sum_2
-    return result_ro
-"""
+    return result_ro"""
 
 
 if __name__ == "__main__":
