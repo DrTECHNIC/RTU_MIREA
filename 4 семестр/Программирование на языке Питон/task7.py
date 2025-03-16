@@ -175,19 +175,19 @@ class tree():
         self.group_third = group3
         self.after_third = after3
 
-    def find(self, mas: list, ):
-        if self.group_first == mas[self.number]:
+    def find(self, array: list, ):
+        if self.group_first == array[self.number]:
             if type(self.after_first) == int:
                 return self.after_first
-            return self.after_first.find(mas)
-        if self.group_second == mas[self.number]:
+            return self.after_first.find(array)
+        if self.group_second == array[self.number]:
             if type(self.after_second) == int:
                 return self.after_second
-            return self.after_second.find(mas)
-        if self.group_third == mas[self.number]:
+            return self.after_second.find(array)
+        if self.group_third == array[self.number]:
             if type(self.after_third) == int:
                 return self.after_third
-            return self.after_third.find(mas)
+            return self.after_third.find(array)
 
 
 def main(array):
