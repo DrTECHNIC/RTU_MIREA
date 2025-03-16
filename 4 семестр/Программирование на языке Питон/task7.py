@@ -165,7 +165,7 @@ def main(r):
 
 
 # 5-е по популярности решение
-class tree():
+"""class tree():
     def __init__(self, number, group1, after1, group2, after2, group3, after3):
         self.number = number
         self.group_first = group1
@@ -198,7 +198,7 @@ def main(array):
     x230_2 = tree(0, 1987, 9, 2010, 10, 1975, 11)
     x23 = tree(3, 'SAGE', x230_1, 'MQL5', x230_2, 'REXX', 12)
     x2 = tree(2, 'NCL', x21, 'EAGLE', x23, 'COBOL', 13)
-    return x2.find(array)
+    return x2.find(array)"""
 
 
 if __name__ == "__main__":
