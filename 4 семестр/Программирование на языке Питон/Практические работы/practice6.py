@@ -153,12 +153,263 @@ def task_2_3():
 
 
 def task_2_5():
-    return
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib.collections import LineCollection
+
+    def generate_attraction_points(n, width, height):
+        return np.random.rand(n, 2) * [width, height]
+
+    def absorb_points(nodes, points, dk):
+        to_remove = []
+        for i, point in enumerate(points):
+            if np.min(np.linalg.norm(nodes - point, axis=1)) < dk:
+                to_remove.append(i)
+        return np.delete(points, to_remove, axis=0)
+
+    def find_influence_sets(nodes, points, di):
+        influence_sets = {i: [] for i in range(len(nodes))}
+        for point in points:
+            distances = np.linalg.norm(nodes - point, axis=1)
+            closest_idx = np.argmin(distances)
+            if distances[closest_idx] <= di:
+                influence_sets[closest_idx].append(point)
+        return influence_sets
+
+    def grow_tree(attraction_points, initial_node, dk, di, D, steps):
+        nodes = np.array([initial_node])
+        segments = []
+        points = np.copy(attraction_points)
+
+        for _ in range(steps):
+            # Шаг 2: Поглощение точек
+            points = absorb_points(nodes, points, dk)
+            if len(points) == 0:
+                break
+
+            # Шаг 3: Поиск множеств влияния
+            influence_sets = find_influence_sets(nodes, points, di)
+
+            # Шаг 4: Рост новых узлов
+            new_nodes = []
+            for idx, S_v in influence_sets.items():
+                if S_v:
+                    vectors = [(s - nodes[idx])/np.linalg.norm(s - nodes[idx]) for s in S_v]
+                    n_vec = np.sum(vectors, axis=0)
+                    if np.linalg.norm(n_vec) > 1e-6:
+                        n_hat = n_vec / np.linalg.norm(n_vec)
+                        new_node = nodes[idx] + n_hat * D
+                        new_nodes.append(new_node)
+                        segments.append([nodes[idx], new_node])
+
+            if new_nodes:
+                nodes = np.vstack([nodes, new_nodes])
+            else:
+                break
+
+        return nodes, segments
+
+    def plot_trees(trees):
+        fig, ax = plt.subplots(figsize=(10, 6))
+        for tree in trees:
+            segments = tree['segments']
+            lc = LineCollection(segments, colors='green', linewidths=1)
+            ax.add_collection(lc)
+        ax.autoscale()
+        ax.set_aspect('equal')
+        ax.set_xticks([])
+        ax.set_yticks([])
+        plt.show()
+
+    def generate_initial_positions(num_trees, width, height, min_distance):
+        positions = []
+        zone_width = width / num_trees
+        for i in range(num_trees):
+            x = i * zone_width + zone_width / 2
+            y = np.random.uniform(0, height / 4)
+            positions.append([x, y])
+        return positions
+
+    # Параметры
+    width, height = 400, 250
+    n_points = 500
+    num_trees = 1  # Количество деревьев
+    min_distance = 20  # Минимальное расстояние между деревьями
+    dk = 5
+    di = 40
+    D = 10
+    steps = 100
+
+    # Начальные позиции с учетом минимального расстояния
+    initial_positions = generate_initial_positions(num_trees, width, height, min_distance)
+
+    # Генерация
+    trees = []
+    for i in range(num_trees):
+        # Определяем зону для каждого дерева
+        zone_width = width / num_trees
+        left = i * zone_width
+        right = (i + 1) * zone_width
+        zone_points = generate_attraction_points(n_points // num_trees, zone_width - min_distance, height)
+        zone_points[:, 0] += left + min_distance / 2  # Сдвигаем точки в свою зону
+
+        # Генерация дерева
+        nodes, segments = grow_tree(zone_points, initial_positions[i], dk, di, D, steps)
+        trees.append({'nodes': nodes, 'segments': segments})
+
+    # Визуализация
+    plot_trees(trees)
 
 
-def task_2_6():
-    return
+def task_2_7():
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib.collections import LineCollection
+    from matplotlib.patches import Circle
+
+
+    def generate_attraction_points(n, width, height, min_y):
+        points = np.random.rand(n, 2) * [width, height - min_y]  # Генерация точек выше min_y
+        points[:, 1] += min_y
+        return points
+
+
+    def absorb_points(nodes, points, dk):
+        to_remove = []
+        for i, point in enumerate(points):
+            if np.min(np.linalg.norm(nodes - point, axis=1)) < dk:
+                to_remove.append(i)
+        return np.delete(points, to_remove, axis=0)
+
+
+    def find_influence_sets(nodes, points, di):
+        influence_sets = {i: [] for i in range(len(nodes))}
+        for point in points:
+            distances = np.linalg.norm(nodes - point, axis=1)
+            closest_idx = np.argmin(distances)
+            if distances[closest_idx] <= di:
+                influence_sets[closest_idx].append(point)
+        return influence_sets
+
+
+    def grow_tree(attraction_points, initial_node, dk, di, D, steps, trunk_length):
+        initial_node = np.array(initial_node, dtype=float)
+
+        # Создаем ствол
+        trunk_end = initial_node + np.array([0, trunk_length])  # Вершина ствола
+        nodes = np.array([initial_node, trunk_end])  # Начальные узлы: основание и вершина ствола
+        segments = [[initial_node, trunk_end]]  # Сегмент ствола
+        points = np.copy(attraction_points)
+
+        for _ in range(steps):
+            points = absorb_points(nodes, points, dk)
+            if len(points) == 0:
+                break
+
+            influence_sets = find_influence_sets(nodes, points, di)
+
+            new_nodes = []
+            for idx, S_v in influence_sets.items():
+                if S_v:
+                    vectors = [(s - nodes[idx]) / np.linalg.norm(s - nodes[idx]) for s in S_v]
+                    n_vec = np.sum(vectors, axis=0)
+                    if np.linalg.norm(n_vec) > 1e-6:
+                        n_hat = n_vec / np.linalg.norm(n_vec)
+                        new_node = nodes[idx] + n_hat * D
+                        new_nodes.append(new_node)
+                        segments.append([nodes[idx], new_node])
+
+            if new_nodes:
+                nodes = np.vstack([nodes, new_nodes])
+            else:
+                break
+
+        return nodes, segments
+
+
+    def add_leaves(ax, segments, leaf_radius, leaf_probability, max_leaves_per_segment, min_distance_between_leaves, min_y=45):
+        leaves = []  # Список для хранения позиций листьев
+        for segment in segments:
+            # Проверяем, что выше min_y
+            if segment[0][1] >= min_y or segment[1][1] >= min_y:
+                # Добавляем листья с нашей вероятностью
+                if np.random.rand() < leaf_probability:
+                    # Количество листьев на текущем сегменте
+                    num_leaves = np.random.randint(1, max_leaves_per_segment + 1)
+                    for _ in range(num_leaves):
+                        t = np.random.uniform(0, 1)  # Случайная позиция вдоль сегмента
+                        x = segment[0][0] + t * (segment[1][0] - segment[0][0])
+                        y = segment[0][1] + t * (segment[1][1] - segment[0][1])
+                        # Проверяем, что лист выше min_y и расстояние до других листьев
+                        if y >= min_y and all(np.linalg.norm(np.array([x, y]) - np.array(leaf)) >= min_distance_between_leaves for leaf in leaves):
+                            leaves.append((x, y))
+                            # Добавление листа
+                            leaf_circle = Circle((x, y), leaf_radius, color='green', alpha=0.5)
+                            ax.add_patch(leaf_circle)
+
+
+    def plot_trees(trees, leaf_radius=4, leaf_probability=0.3, max_leaves_per_segment=3, min_distance_between_leaves=10, min_y=45):
+        fig, ax = plt.subplots(figsize=(10, 6))
+        for tree in trees:
+            segments = tree['segments']
+            lc = LineCollection(segments, colors='brown', linewidths=2)  # Коричневые ветки
+            ax.add_collection(lc)
+            # Добавляем листья (только выше min_y)
+            add_leaves(ax, segments, leaf_radius, leaf_probability, max_leaves_per_segment, min_distance_between_leaves, min_y)
+        ax.autoscale()
+        ax.set_aspect('equal')
+        ax.set_xticks([])
+        ax.set_yticks([])
+        plt.show()
+
+
+    def generate_initial_positions(num_trees, width, trunk_base_y):
+        positions = []
+        zone_width = width / num_trees
+        for i in range(num_trees):
+            x = i * zone_width + zone_width / 2
+            y = trunk_base_y  # Основание ствола на высоте trunk_base_y
+            positions.append([x, y])
+        return positions
+
+
+    # Параметры
+    width, height = 400, 250
+    n_points = 500
+    num_trees = 3  # Количество деревьев
+    min_distance = 50  # Минимальное расстояние между деревьями
+    dk = 5
+    di = 40
+    D = 10
+    steps = 100
+    trunk_length = 45  # Длина ствола
+    trunk_base_y = 35  # Высота основания ствола
+    leaf_radius = 8  # Радиус листьев
+    leaf_probability = 0.5  # Вероятность появления листьев на сегменте
+    max_leaves_per_segment = 3  # Максимальное количество листьев на сегмент
+    min_distance_between_leaves = 20  # Минимальное расстояние между листьями
+    min_y_for_leaves = 75  # Минимальная высота для появления листьев
+
+    # Начальные позиции с учетом минимального расстояния
+    initial_positions = generate_initial_positions(num_trees, width, trunk_base_y)
+
+    # Генерация
+    trees = []
+    for i in range(num_trees):
+        # Определяем зону для каждого дерева
+        zone_width = width / num_trees
+        left = i * zone_width
+        right = (i + 1) * zone_width
+        zone_points = generate_attraction_points(n_points // num_trees, zone_width - min_distance, height, trunk_base_y + trunk_length)
+        zone_points[:, 0] += left + min_distance / 2  # Сдвигаем точки в свою зону
+
+        # Генерация дерева
+        nodes, segments = grow_tree(zone_points, initial_positions[i], dk, di, D, steps, trunk_length)
+        trees.append({'nodes': nodes, 'segments': segments})
+
+    # Визуализация с листьями только выше min_y_for_leaves
+    plot_trees(trees, leaf_radius, leaf_probability, max_leaves_per_segment, min_distance_between_leaves, min_y_for_leaves)
 
 
 if __name__ == "__main__":
-    task_2_3()
+    task_2_7()
