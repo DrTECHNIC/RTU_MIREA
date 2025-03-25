@@ -261,7 +261,7 @@ def task_2_5():
     plot_trees(trees)
 
 
-def task_2_7():
+def task_2_6():
     import numpy as np
     import matplotlib.pyplot as plt
     from matplotlib.collections import LineCollection
