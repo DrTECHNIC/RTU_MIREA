@@ -78,7 +78,7 @@ def main(input_table):
 
 
 # 2-е по популярности решение
-# Наиболее близкое решение, но не оно
+# Наиболее близкое решение, но не оно:
 """def get_unique_columns(t):
     # return [list(r) for r in zip(*dict.fromkeys(zip(*t)))]
     return transpose_table(dict.fromkeys(zip(*t)))
@@ -118,6 +118,62 @@ def main(t):
             split_column(
                 remove_empty_rows(
                     get_unique_columns(t)))))"""
+
+# Тоже возможный вариант:
+"""def get_unique_columns(t):
+    return transpose_table(dict.fromkeys(zip(*t)))
+
+
+def remove_empty_rows(t):
+    return list(filter(bool, map(lambda r: list(filter(bool, r)), t)))
+
+
+def split_column(t):
+    return list(map(lambda r: [r[0].split('#')[0], r[1],
+                               r[0].split('#')[1]], t))
+
+
+def transform_1(c):
+    return c.replace('-', '')
+
+
+def transform_2(c):
+    return c.replace('/', '.')
+
+
+def transform_3(c):
+    return 'Выполнено' if c == 'Y' else 'Не выполнено' if c == 'N' else c
+
+
+def transform_cell(t):
+    return list(map(lambda r:
+                    list(map(lambda c:
+                             transform_3(
+                                 transform_2(
+                                     transform_1(c))),
+                             r)), t))
+
+
+def transpose_table(t):
+    return list(map(lambda *r: list(r), *t))
+
+
+def main(t):
+    return transpose_table(
+        transform_cell(
+            split_column(
+                remove_empty_rows(
+                    get_unique_columns(t)))))"""
+
+# И ещё один:
+"""def main(t):
+    t = list(map(list, zip(*dict.fromkeys(zip(*t)))))
+    t = list(filter(bool, [list(filter(bool, r)) for r in t]))
+    t = [[f"{r[0][:3]}{r[0][4:7]}{r[0][8:12]}",
+          f"{r[1][:2]}.{r[1][3:5]}.{r[1][6:]}",
+          'Выполнено' if r[0][-1] == 'Y' else 'Не выполнено']
+         for r in t]
+    return list(map(list, zip(*t)))"""
 
 
 if __name__ == "__main__":
