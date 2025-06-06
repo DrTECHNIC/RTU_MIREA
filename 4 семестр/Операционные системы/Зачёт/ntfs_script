@@ -1,0 +1,87 @@
+#!/bin/bash
+
+# Проверка наличия аргументов (skip и count)
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <skip_bytes> <count_bytes>"
+    exit 1
+fi
+
+# Проверка, что аргументы - неотрицательные целые числа
+#if ! [[ $1 =~ ^[0-9]+$ ]] || ! [[ $2 =~ ^[0-9]+$ ]]; then
+#    echo "Error: Both skip and count must be non-negative integers"
+#    exit 1
+#fi
+
+skip_bytes=$1
+count_bytes=$2
+
+# Рабочая директория с файлами
+WORK_DIR="./os"
+
+# Переходим в рабочую директорию
+cd "$WORK_DIR" || { echo "Error: Cannot access $WORK_DIR"; exit 1; }
+
+# Создаем безопасный временный файл для списка файлов
+TEMP_LIST=$(mktemp)
+
+# Получаем список файлов в порядке скачивания (старые -> новые)
+ls -tr > "$TEMP_LIST"
+
+# Массив для хранения оригинальных имен файлов
+declare -a original_files=()
+
+# Переименовываем файлы в числовой порядок и сохраняем оригинальные имена
+count=1
+while IFS= read -r -d $'\n' file; do
+    # Пропускаем временный файл и директории
+    if [ -f "$file" ] && [ ! "$file" -ef "$TEMP_LIST" ]; then
+        original_files["$count"]="$file"
+        mv -n -- "$file" "$count"
+        ((count++))
+    fi
+done < "$TEMP_LIST"
+
+# Удаляем временный файл
+rm -f "$TEMP_LIST"
+
+# Определяем общее количество файлов
+total_files=$((count-1))
+
+# Конкатенация файлов в правильном порядке и применение dd с skip и count
+{
+    for i in $(seq 1 $total_files); do
+        if [ -f "$i" ]; then
+            cat -- "$i"
+        fi
+    done
+} | dd bs=1 skip=$skip_bytes count=$count_bytes 2>/dev/null | md5sum | awk '{print $1}'
+
+# Выводим список файлов после переименования
+#echo -e "\nCurrent files in directory:"
+#ls -l
+
+# Ожидаем ввода пользователя для удаления или выхода
+while true; do
+    read -p $'\nEnter \"d\" to delete renamed files or \"e\" to exit: ' choice
+    case "$choice" in
+        [dD])
+            # Удаляем переименованные файлы
+            for i in $(seq 1 $total_files); do
+                if [ -f "$i" ]; then
+                    rm -f "$i"
+                fi
+            done
+            echo "Renamed files have been deleted."
+            break
+            ;;
+        [eE])
+            echo "Script completed without deleting files."
+            break
+            ;;
+        *)
+            echo "Invalid choice. Please enter 'd' or 'e'."
+            ;;
+    esac
+done
+
+exit 0
