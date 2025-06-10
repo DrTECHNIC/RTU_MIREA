@@ -1,0 +1,36 @@
+CMD:
+1) copy /b 1 + 2 + 3 combined.tmp
+2) fsutil file seteof combined.tmp размер_файла_в_байтах
+3) certutil -hashfile combined.tmp MD5
+
+PowerShell:
+1) Get-Content -Path 1, 2, 3 -Raw -Encoding Byte | Set-Content -Path combined.tmp -Encoding Byte -NoNewline
+2) $content = [System.IO.File]::ReadAllBytes("combined.tmp")
+[System.IO.File]::WriteAllBytes("trimmed.tmp", $content[0..размер_файла_в_байтах-1])
+3) Get-FileHash -Path trimmed.tmp -Algorithm MD5 | Select-Object -ExpandProperty Hash
+
+
+
+
+Действие			CMD						PowerShell
+Объединить файлы		copy /b 1 + 2 + 3 combined.tmp			Get-Content 1,2,3 -Raw -Encoding Byte | Set-Content combined.tmp -Encoding Byte -NoNewline
+Обрезать до N байт		fsutil file seteof combined.tmp N		$c=[IO.File]::ReadAllBytes("combined.tmp"); [IO.File]::WriteAllBytes("trimmed.tmp", $c[0..(N-1)])
+Вычислить MD5			certutil -hashfile trimmed.tmp MD5		Get-FileHash trimmed.tmp -Algorithm MD5 | Select-Object -ExpandProperty Hash
+Удалить временные файлы		del combined.tmp trimmed.tmp			Remove-Item combined.tmp, trimmed.tmp
+
+
+
+
+
+
+
+Со скипом:
+
+PowerShel:
+$inputFile = "input.txt"
+$outputFile = "output.txt"
+$skipBytes = 20
+$countBytes = 1234
+# Читаем файл как массив байтов, пропускаем первые $skipBytes, берем $countBytes
+$bytes = [System.IO.File]::ReadAllBytes($inputFile)
+[System.IO.File]::WriteAllBytes($outputFile, $bytes[$skipBytes..($skipBytes + $countBytes - 1)])
