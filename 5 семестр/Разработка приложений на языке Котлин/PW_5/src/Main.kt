@@ -1,4 +1,3 @@
-import kotlin.math.roundToInt
 import kotlin.random.Random
 
 class Cat {
