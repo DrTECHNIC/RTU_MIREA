@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>
         <title>Title</title>
+        <link rel="icon" href="./public/icons8-favicon-96.png" type="image/x-icon"/>
+        <style>
+            h1 {
+                color: red;
+            }
+        </style>
+        <link rel="stylesheet" href="./style.css"/>
     </head>
     <body>
         <header>Hello, header!</header>
         <main>
             <section>Hello, section!</section>
+            <br>
+            <hr>
+            <section>
+                <h3 id="example"></h3>
+                <p style="color: blue">
+                    Ссылка на
+                    <a href="https://dzen.ru">dzen</a>
+                </p>
+                <a href="https://dzen.ru" target="_blank">dzen new window</a>
+                <a href="#ol">section ol</a>
+            </section>
+            <br>
+            <hr>
             <br>
             <hr>
             <section>
@@ -67,7 +87,7 @@
             </section>
             <br>
             <hr>
-            <section>
+            <section id="ol">
                 <ol type="1">
                     <li>Утро</li>
                     <li>День</li>
@@ -87,9 +107,59 @@
                     <li>Ночь</li>
                 </ol>
             </section>
+            <br>
+            <hr>
+            <img width="200" src="https://masterpiecer-images.s3.yandex.net/5ff700465bfe0fc:upscaled" alt="Общедоступный кот"/>
+            <a href="https://github.com/DrTECHNIC/RTU_MIREA/">
+                <img height="200" src="./public/image1.jpg" alt="Локальный кот"/>
+            </a>
+            <br>
+            <hr>
+            <picture>
+                <source srcset="https://p.turbosquid.com/ts-thumb/Vt/EyYn3N/eS/fnafoffice11/png/1652642882/1920x1080/fit_q87/6ac712f8d831dfd26e850813930dcb1c4b93fe95/fnafoffice11.jpg" media="(min-width: 1000px)">
+                <img width="800" src="https://i.ytimg.com/vi/xrFjO9L_17U/maxresdefault.jpg" alt="АААААААААА страшно"/>
+            </picture>
+            <br>
+            <hr>
+            <section>
+                <audio controls>
+                    <source src="./public/scream-freddy.mp3" type="audio/mpeg">
+                </audio>
+            </section>
+            <br>
+            <hr>
+            <section>
+                <video controls>
+                    <source src="https://videocdn.cdnpk.net/videos/637d39f2-b66a-53f1-934f-c1d8e89f1d48/horizontal/previews/clear/large.mp4?token=exp=1759148698~hmac=31e4a1a9b5e1064cda7f84c6386b8efe4b061c9b87e6434cda1da4bcfeb6be5e" type="video/mp4">
+                </video>
+            </section>
+            <br>
+            <hr>
+            <section>
+                    <iframe src="https://vk.com/video_ext.php?oid=-57876954&id=456322639&hd=2" width="853" height="480" style="background-color: #000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+            </section>
+            <br>
+            <hr>
+            <section>
+                <table>
+                    <tr>
+                        <th>Первый</th>
+                        <th>Второй</th>
+                    </tr>
+                    <tr>
+                        <td>Азбука</td>
+                        <td>Какая азбука?</td>
+                    </tr>
+                    <tr>
+                        <td>АБВГД... Продолжай!</td>
+                        <td>Я не буду в этом участвовать...</td>
+                    </tr>
+                </table>
+            </section>
         </main>
         <br>
         <hr>
     <footer>Hello, footer!</footer>
+    <script>document.getElementById("example").innerHTML = "Мой первый JavaScript код"</script>
     </body>
 </html>
