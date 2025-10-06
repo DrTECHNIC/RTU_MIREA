@@ -1,0 +1,31 @@
+fun main() {
+    println("=== TimeMeasure ===")
+    val time1 = TimeMeasure(14, 30, 45)
+    time1.display24HourFormat()
+    time1.display12HourFormat()
+    time1.addTime(2, 15, 20)
+    time1.display24HourFormat()
+
+    println("\n=== UniqueString ===")
+    val uniqueStr = UniqueString("            Hello Kotlin")
+    uniqueStr.printString()
+    val index: Int = 3
+    println("Символ по индексу $index: ${uniqueStr.getChar(index)}")
+    println("Длина: ${uniqueStr.length()}")
+    println("Содержит ('K', 'o', 't', 'l', 'i', 'n'): ${uniqueStr.contains(charArrayOf('K', 'o', 't', 'l', 'i', 'n'))}")
+    println("Содержит \"Kotlin\": ${uniqueStr.contains("Kotlin")}")
+    uniqueStr.trimLeadingSpaces()
+    uniqueStr.printString()
+    uniqueStr.reverse()
+    uniqueStr.printString()
+
+    println("\n=== BankAccount ===")
+    val account = banking.BankAccount("123456789", 1000.0, "John Doe")
+    println(account.getAccountInfo())
+    account.deposit(500.0)
+    println("\nПосле пополнения:")
+    println(account.getAccountInfo())
+    val success = account.withdraw(200.0)
+    println("\nРезультат снятия: $success")
+    println(account.getAccountInfo())
+}
