@@ -1,0 +1,46 @@
+body {
+    background: #3D3D3D;
+    width: 100vw;
+    height: 100vh;
+    color: #fff
+}
+
+h1 {
+    font: normal 32px "sans-serif";
+    color: white;
+    text-decoration: underline solid white;
+}
+
+div {
+    font: normal 24px "sans-serif";
+    color: grey;
+}
+
+p {
+    font: normal 16px "sans-serif";
+    color: white;
+    background: #5F5F5F;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.content-container {
+    margin: 100px auto;
+    padding: 2em;
+    width: 75%;
+    margin-top: 5em;
+    background: #3D3D3D;
+    border: 3px solid orange;
+    border-radius: 10px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.7);
+    transition: padding 500ms, margin 500ms;
+}
+
+.orange {
+    color: orange;
+}
+
+.content-container:hover {
+    padding: 2.5em;
+    margin: 90px auto;
+}

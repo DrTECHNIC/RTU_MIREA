@@ -1,0 +1,80 @@
+a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --background-color: blue;
+}
+
+body {
+    /*background: #3D3D3D;*/
+    width: 100vw;
+    height: 100vh;
+    /*background-image: linear-gradient(to bottom, white 33.3%, blue 33.3%, red 66.7%);*/
+    color: #fff;
+    background: var(--background-color);
+}
+
+@font-face {
+    font-family: "Rye-Regular";
+    src: url("./public/fonts/Rye-Regular.ttf")
+}
+
+h1 {
+    font: normal 32px "sans-serif";
+}
+
+div {
+    font: normal 24px "sans-serif";
+}
+
+p {
+    /*font: 14px "Times New Roman", Times, serif;*/
+    font: normal 16px "sans-serif";
+    text-shadow: 4px 4px 0 rgba(0,0,0,0.6);
+    /*font: normal 400 16px "Rye-Regular", sans-serif;*/
+    text-decoration: underline solid orange;
+}
+
+.heading {
+    color: orange;
+    font-size: 19px;
+}
+
+.card {
+    border: 3px solid green;
+    background: grey;
+    height: 200px;
+    aspect-ratio: 1/1;
+    border-radius: 16px;
+    box-shadow: 5px 5px rgba(16,16,16,0.5);
+}
+
+.big_card {
+    aspect-ratio: 5/2;
+}
+
+#title {
+    color: red;
+}
+
+.padding {
+    padding: 20px;
+}
+
+.margin {
+    margin: 20px;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    background: red;
+    transition: background 500ms;
+}
+
+.content:hover {
+    background: blue;
+}
