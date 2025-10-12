@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Lobster';
+    src: url('./public/fonts/Lobster/Lobster-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IBM Plex Serif';
+    src: url('./public/fonts/IBM_Plex_Serif/IBMPlexSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair';
+    src: url('./public/fonts/Playfair/Playfair-Italic-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: 'IBM Plex Serif', serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+nav a {
+    font-family: 'Playfair', serif;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #3498db;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #2980b9;
+}
+
+main {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-family: 'Lobster', cursive;
+    font-size: 16px;
+    font-weight: bold;
+    color: #34495e;
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #34495e;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+footer h2, footer h3 {
+    color: white;
+}
+
+footer form {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: #333;
+}
+
+footer fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+    color: #333;
+}
+
+footer legend {
+    font-family: 'Playfair', serif;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+footer label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+footer input, footer select, footer textarea {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    color: #333;
+    background-color: white;
+}
+
+footer button {
+    font-family: 'Playfair', serif;
+    background-color: #27ae60;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: #219a52;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    background-color: white;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #ecf0f1;
+    font-weight: bold;
+}
+
+.project-card {
+    background-color: white;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.tech-tags span {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 2px 6px;
+    margin: 2px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+em {
+    color: #8e44ad;
+    font-style: italic;
+}
+
+mark {
+    background-color: #f39c12;
+    color: black;
+}
+
+a {
+    color: #2980b9;
+}
+
+a:hover {
+    color: #3498db;
+}
+
+small {
+    color: #7f8c8d;
+}
+
+img {
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+video {
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+address {
+    font-style: normal;
+    background-color: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 8px 0;
+}
