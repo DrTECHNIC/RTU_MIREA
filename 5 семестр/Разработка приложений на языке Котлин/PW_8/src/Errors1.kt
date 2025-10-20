@@ -163,7 +163,6 @@ fun main() {
     debitCard.updateBalance(5000.0)
 
     // 24. исправил передачу строки на передачу enum
-    // 25. проверка результата операций
     val success1 = atm.makeTransaction(creditCard, 1234, 2000.0, "2025-01-15", TransactionType.WITHDRAWAL)
     val success2 = atm.makeTransaction(debitCard, 5678, 1000.0, "2025-01-15", TransactionType.DEPOSIT)
 
@@ -171,11 +170,10 @@ fun main() {
     println("Операция пополнения: ${if (success2) "успешно" else "неудачно"}")
 
     println("Баланс кредитной карты: ${creditCard.getBalance()}")
-    // 26. вывод доступного кредита
+
     println("Доступный кредит: ${creditCard.getAvailableCredit()}")
     println("Баланс дебетовой карты: ${debitCard.getBalance()}")
 
-    // 27. последовательность вызовов
     atm.printTransactions("1234-5678-9012-3456")
     atm.printTransactions("9876-5432-1098-7654")
 
