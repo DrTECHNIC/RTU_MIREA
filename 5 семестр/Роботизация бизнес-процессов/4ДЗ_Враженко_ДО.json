@@ -1,0 +1,492 @@
+{
+  "generator": "studioFront",
+  "generated_by_front_version": "1.10.3",
+  "created_by_front_version": "1.10.3",
+  "consumer": "import",
+  "uuid": "2aacdab6-4e96-458a-aa3e-e7fd8a41018f",
+  "name": "Практика1_ВраженкоДО",
+  "description": "",
+  "nodes_direction": "fromUptoDown",
+  "verbose": false,
+  "clear_log_before_run": false,
+  "default_timeout": null,
+  "py_libraries": [],
+  "rights": [
+    "dr.technic27111985"
+  ],
+  "robot_graphs": [
+    {
+      "name": "Практика1_ВраженкоДО",
+      "uuid": "70d15d87-d6ca-4046-9a70-a8faad9f29d6",
+      "annotation": null,
+      "snippet_robot_uuid": null,
+      "snippet_robot_version_uuid": null,
+      "snippet_meta": null,
+      "snippet_parent_node_uuid": null,
+      "template_meta": null,
+      "template_robot_uuid": null,
+      "template_robot_version_uuid": null,
+      "sha1": "dc60dd665799c7b3bd67af040950c645339c1e43",
+      "vars": {
+        "global": [
+          {
+            "name": "RITA_ENV",
+            "uuid": "b3d4a15c-0e3d-41d4-ad7f-23524cf2ae7c",
+            "value": {},
+            "required": false,
+            "data_type": "base.dictionary",
+            "item_type": "base.any",
+            "display_assistant": false
+          },
+          {
+            "name": "path",
+            "data_type": "base.string",
+            "comment": "Путь к файлу",
+            "required": false,
+            "uuid": "d07318e0-a688-47c7-a602-654b31880f16",
+            "value": "C:\\Users\\wrada\\OneDrive\\Desktop\\test.docx",
+            "display_assistant": false
+          },
+          {
+            "name": "file",
+            "data_type": "object.wordApp",
+            "comment": "Ссылка на активность",
+            "required": false,
+            "uuid": "bfb205e7-931c-4590-95fb-af468f3f7069"
+          }
+        ]
+      },
+      "id": "garpa@1.0.0",
+      "nodes": {
+        "1": {
+          "id": 1,
+          "data": {
+            "uuid": "10e26d66-6cd9-4bfe-9b7a-26504ea13c75",
+            "vars": {
+              "inputs": [],
+              "outputs": []
+            },
+            "title": "Старт",
+            "input_socket_position": "top",
+            "output_socket_position": "bottom"
+          },
+          "inputs": {},
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 11,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            4.79998779296875,
+            -217.4000244140625
+          ],
+          "name": "base.start"
+        },
+        "2": {
+          "id": 2,
+          "data": {
+            "uuid": "7dd33a71-03af-4214-9cdc-639eb032674a",
+            "vars": {
+              "inputs": [],
+              "outputs": []
+            },
+            "title": "Финиш",
+            "input_socket_position": "top",
+            "output_socket_position": "bottom"
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 9,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {},
+          "position": [
+            3.99993896484375,
+            748.6094360351562
+          ],
+          "name": "base.finish"
+        },
+        "7": {
+          "id": 7,
+          "data": {
+            "uuid": "175e2d71-d69e-4c6d-af68-3bcc6ce654d0",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "bfb205e7-931c-4590-95fb-af468f3f7069",
+                  "uuid": "905ef9e9-885b-43f5-b457-bc306f84e301",
+                  "name": "word_settings",
+                  "data_type": "object.wordApp"
+                },
+                {
+                  "uuid": "a2e01b44-2626-4463-a0a2-cc40c885eeba",
+                  "name": "text",
+                  "value": "Привет Мир!",
+                  "data_type": "base.string"
+                },
+                {
+                  "uuid": "d5695be6-2888-4ac0-9193-8e4212497cc3",
+                  "name": "insert_to",
+                  "value": "END_DOC",
+                  "data_type": "base.enum"
+                },
+                {
+                  "name": "paragraph",
+                  "uuid": "224d18e9-a2a2-4dbd-bc89-6704e539fa10",
+                  "value": null,
+                  "data_type": "base.integer"
+                },
+                {
+                  "uuid": "a6fb7e31-8829-4290-adb0-da323a22d574",
+                  "name": "new_line",
+                  "value": true,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "font_name",
+                  "uuid": "99e82584-bc55-4ee6-a77c-2db3f409fe5b",
+                  "value": "",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "font_size",
+                  "uuid": "cc7472b7-35e5-4524-8ac1-2c88fe829bcc",
+                  "value": null,
+                  "data_type": "base.integer"
+                },
+                {
+                  "name": "font_options",
+                  "uuid": "d48e5934-e6ee-4fbf-8aeb-244396e3eace",
+                  "value": [],
+                  "data_type": "base.list",
+                  "item_type": "base.string"
+                },
+                {
+                  "name": "font_color",
+                  "uuid": "97355e9a-dbfa-431c-8760-1206612c770e",
+                  "value": "",
+                  "data_type": "base.string"
+                }
+              ],
+              "outputs": []
+            },
+            "title": "Добавить текст \"Привет Мир!\" в test.docx",
+            "version": 2,
+            "base_name": "word.append_text",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 2
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 11,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 8,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -181.21032968861527,
+            98.91073179650365
+          ],
+          "name": "word.append_text.2"
+        },
+        "8": {
+          "id": 8,
+          "data": {
+            "uuid": "0f89ca3a-730a-47ab-a76d-d69a22551eb9",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "d07318e0-a688-47c7-a602-654b31880f16",
+                  "uuid": "56adf14f-3b62-4c1a-a402-bb9e507a26db",
+                  "name": "new_path",
+                  "data_type": "base.string"
+                },
+                {
+                  "ref": "bfb205e7-931c-4590-95fb-af468f3f7069",
+                  "uuid": "a7f53293-d789-4fb7-8ad6-baf64b242c8d",
+                  "name": "word_settings",
+                  "data_type": "object.wordApp"
+                }
+              ],
+              "outputs": []
+            },
+            "title": "Сохранить документ test.docx",
+            "version": 2,
+            "base_name": "word.save_word",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 7,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 9,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -182.01037851674027,
+            382.86323130221433
+          ],
+          "name": "word.save_word.2"
+        },
+        "9": {
+          "id": 9,
+          "data": {
+            "uuid": "20f4d8e2-d327-487d-85c3-217f301b2129",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "bfb205e7-931c-4590-95fb-af468f3f7069",
+                  "name": "word_settings",
+                  "uuid": "ab7f0ea9-3fd5-406c-a3f4-3c5d28ac004a",
+                  "data_type": "object.wordApp"
+                }
+              ],
+              "outputs": []
+            },
+            "title": "Закрыть документ test.docx",
+            "version": 2,
+            "base_name": "word.close_word",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 8,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 2,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -180.41040293080277,
+            579.7093811035156
+          ],
+          "name": "word.close_word.2"
+        },
+        "11": {
+          "id": 11,
+          "data": {
+            "uuid": "f1a55e84-580f-41f0-9eb0-88f3d7724851",
+            "vars": {
+              "inputs": [
+                {
+                  "name": "use_app",
+                  "uuid": "a5e6e02f-ca38-4513-a595-c64d7ed77506",
+                  "value": true,
+                  "data_type": "base.bool"
+                },
+                {
+                  "ref": "d07318e0-a688-47c7-a602-654b31880f16",
+                  "uuid": "622ee738-41fc-4d4f-84ac-a446e656029d",
+                  "name": "file_path",
+                  "data_type": "base.string"
+                },
+                {
+                  "uuid": "a74c6f1d-3ebb-4a89-b09d-8a9af9f0e112",
+                  "name": "create_if_none",
+                  "value": true,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "read_only",
+                  "uuid": "438a3277-5d00-4ca5-9010-f48210897e49",
+                  "value": false,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "save_each_action",
+                  "uuid": "70f04851-a172-44e7-a1f0-65d14cf518c6",
+                  "value": true,
+                  "data_type": "base.bool"
+                }
+              ],
+              "outputs": [
+                {
+                  "uuid": "e9037b34-2489-4cfe-9ad0-5e9b3b76a830",
+                  "ref": "bfb205e7-931c-4590-95fb-af468f3f7069",
+                  "name": "word_app",
+                  "value": "",
+                  "data_type": "object.wordApp"
+                },
+                {
+                  "uuid": "1907d7f1-24ce-4f9f-a565-48ba4a0338b9",
+                  "ref": "",
+                  "name": "word_file",
+                  "value": "",
+                  "data_type": "object.wordFile"
+                }
+              ]
+            },
+            "title": "Открыть документ test.docx",
+            "version": 2,
+            "base_name": "word.open_word",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 1,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 7,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -180.69955436842022,
+            -129.44933994040585
+          ],
+          "name": "word.open_word.2"
+        }
+      }
+    }
+  ],
+  "is_snippet": false,
+  "is_template": false,
+  "breakpoints": [],
+  "disabled_nodes": [],
+  "opened_graphs": [
+    "70d15d87-d6ca-4046-9a70-a8faad9f29d6"
+  ],
+  "own_nodes": {},
+  "expanded_nodes": [
+    "10e26d66-6cd9-4bfe-9b7a-26504ea13c75",
+    "7dd33a71-03af-4214-9cdc-639eb032674a",
+    "175e2d71-d69e-4c6d-af68-3bcc6ce654d0",
+    "0f89ca3a-730a-47ab-a76d-d69a22551eb9",
+    "20f4d8e2-d327-487d-85c3-217f301b2129",
+    "f1a55e84-580f-41f0-9eb0-88f3d7724851"
+  ],
+  "linked_accounts": [],
+  "snippet_robots": [],
+  "generated_at": "2025-10-21T08:04:25.020Z",
+  "latest_robot_version_uuid": "0ae63dda-074a-491c-8902-a4d1a047b6c5",
+  "latest_robot_version": {
+    "uuid": "0ae63dda-074a-491c-8902-a4d1a047b6c5",
+    "robot_uuid": "2aacdab6-4e96-458a-aa3e-e7fd8a41018f",
+    "robot_history_sha1": "54f67a1b934e6c0d9dcef1d23c8c199d84668b75",
+    "commit_message": "Сохранение после установки глоб. переменной",
+    "created_by": 2132,
+    "created_at": "2025-10-21T08:00:34.313Z",
+    "version_num": "0.122",
+    "version_type": "autosave",
+    "is_published": false,
+    "createdByUser": {
+      "id": 2132,
+      "name": "Враженко Даниил Олегович",
+      "login": "dr.technic27111985",
+      "email": "dr.technic27111985@gmail.com",
+      "is_active": true
+    },
+    "robot_history": {
+      "sha1": "54f67a1b934e6c0d9dcef1d23c8c199d84668b75",
+      "data": {
+        "name": "Практика1_ВраженкоДО",
+        "verbose": false,
+        "is_snippet": false,
+        "breakpoints": [],
+        "description": "",
+        "is_template": false,
+        "py_libraries": [],
+        "opened_graphs": [
+          "70d15d87-d6ca-4046-9a70-a8faad9f29d6"
+        ],
+        "disabled_nodes": [],
+        "expanded_nodes": [
+          "10e26d66-6cd9-4bfe-9b7a-26504ea13c75",
+          "7dd33a71-03af-4214-9cdc-639eb032674a",
+          "175e2d71-d69e-4c6d-af68-3bcc6ce654d0",
+          "0f89ca3a-730a-47ab-a76d-d69a22551eb9",
+          "20f4d8e2-d327-487d-85c3-217f301b2129",
+          "f1a55e84-580f-41f0-9eb0-88f3d7724851"
+        ],
+        "default_timeout": null,
+        "linked_accounts": [],
+        "nodes_direction": "fromUptoDown",
+        "clear_log_before_run": false,
+        "created_by_front_version": "1.10.3",
+        "generated_by_front_version": "1.10.3"
+      }
+    }
+  },
+  "latest_published_robot_version": null,
+  "latest_published_robot_version_uuid": null
+}
