@@ -1,0 +1,166 @@
+.container_load {
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+}
+
+.obj {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background: #212121;
+    transform: translate(0, 0);
+}
+
+.obj1 {
+    animation: obj1_anim 8s infinite ease-in-out;
+}
+
+@keyframes obj1_anim {
+    0% {
+        transform: translate(0, 0);
+    }
+    12.5% {
+        transform: translate(300%, 0);
+    }
+    25% {
+        transform: translate(300%, 0);
+    }
+    37.5% {
+        transform: translate(300%, 300%);
+    }
+    50% {
+        transform: translate(300%, 300%);
+    }
+    62.5% {
+        transform: translate(0, 300%);
+    }
+    75% {
+        transform: translate(0, 300%);
+    }
+    87.5% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.obj2 {
+    animation: obj2_anim 8s infinite ease-in-out;
+}
+
+@keyframes obj2_anim {
+    0% {
+        transform: translate(300%, 0);
+    }
+    12.5% {
+        transform: translate(300%, 300%);
+    }
+    25% {
+        transform: translate(300%, 300%);
+    }
+    37.5% {
+        transform: translate(0, 300%);
+    }
+    50% {
+        transform: translate(0, 300%);
+    }
+    62.5% {
+        transform: translate(0, 0);
+    }
+    75% {
+        transform: translate(0, 0);
+    }
+    87.5% {
+        transform: translate(300%, 0);
+    }
+    100% {
+        transform: translate(300%, 0);
+    }
+}
+
+.obj3 {
+    animation: obj3_anim 8s infinite ease-in-out;
+}
+
+@keyframes obj3_anim {
+    0% {
+        transform: translate(300%, 300%);
+    }
+    12.5% {
+        transform: translate(0, 300%);
+    }
+    25% {
+        transform: translate(0, 300%);
+    }
+    37.5% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    62.5% {
+        transform: translate(300%, 0);
+    }
+    75% {
+        transform: translate(300%, 0);
+    }
+    87.5% {
+        transform: translate(300%, 300%);
+    }
+    100% {
+        transform: translate(300%, 300%);
+    }
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background: #fff;
+    border-radius: 16px;
+    gap: 16px;
+    > img {
+        width: calc(50% - 8px);
+        height: 100%;
+        border-radius: 16px;
+    }
+    > div {
+        width: calc(50% - 8px);
+        padding: 8px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        justify-content: space-between;
+    }
+    &:hover {
+        animation: upCard 0.45s ease-in-out;
+    }
+    @container card-container (max-width: 640px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        > img, > div {
+            width: 100%;
+        }
+    }
+}
+
+@keyframes upCard {
+    from {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

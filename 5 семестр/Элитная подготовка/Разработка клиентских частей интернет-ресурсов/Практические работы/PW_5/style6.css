@@ -1,0 +1,42 @@
+@property --color-1 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ff6b6b;
+}
+
+@property --color-2 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #48dbfb;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 135deg;
+}
+
+@keyframes changeColorGradient {
+    0% {
+        --angle: 135deg;
+        --color-1: #ff6b6b;
+        --color-2: #48dbfb;
+    }
+    100% {
+        --angle: 45deg;
+        --color-1: #5f27cd;
+        --color-2: #feca57;
+    }
+}
+
+body {
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+
+    background-image: linear-gradient(var(--angle), var(--color-1), var(--color-2));
+    animation: changeColorGradient  4s ease-in-out infinite alternate;
+}

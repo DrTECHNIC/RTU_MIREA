@@ -1,0 +1,14 @@
+body {
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+
+    background-color: #ffffff;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: #212121;
+    }
+}

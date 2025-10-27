@@ -1,0 +1,60 @@
+.Link {
+    display: inline-block;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: 0.3s color, background-size 0.3s;
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Link.underline:hover {
+    background-size: 100% 2px;
+}
+
+.Link.fill {
+    background-image: none;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    transition: 0.3s all;
+}
+
+.Link.fill:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.Link.fill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    transition: 0.3s left;
+    z-index: -1;
+}
+
+.Link.fill:hover::before {
+    left: 0;
+}
+
+body {
+    background: #1a1a1a;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.link-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
