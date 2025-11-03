@@ -1,0 +1,69 @@
+:root {
+    --bg-light: #f5f5f5;
+    --bg-dark: #222;
+    --text-light: #222;
+    --text-dark: #f5f5f5;
+    --accent: #0078d7;
+}
+
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: background .4s, color .4s;
+}
+
+.theme-toggle {
+    text-align: center;
+}
+
+
+.theme-toggle__input {
+    display: none;
+}
+
+
+.theme-toggle__label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+    background: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background .3s ease;
+}
+
+
+.theme-toggle__ball {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    transition: transform .3s ease, background .3s ease;
+}
+
+
+.theme-toggle__input:checked + .theme-toggle__label {
+    background: var(--accent);
+}
+.theme-toggle__input:checked + .theme-toggle__label .theme-toggle__ball {
+    transform: translateX(28px);
+    background: #222;
+}
+
+
+.theme-toggle__input:checked ~ .theme-toggle__content {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+    transition: background .4s, color .4s;
+    border-radius: 10px;
+    padding: 2em;
+}

@@ -1,0 +1,26 @@
+.faq {
+    max-width: 600px;
+    margin: 600px;
+}
+
+details {
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: .5em 1em;
+    transition: all 0.3s ease;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+summary::marker {
+    display: none;
+}
+
+details[open] {
+    background: #f7f7f7;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма</title>
+    <link rel="stylesheet" href="./style9.css">
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Регистрация</legend>
+
+        <label>Имя:
+            <input type="text" name="username" required>
+        </label>
+
+        <label>Email:
+            <input type="email" name="email" required>
+        </label>
+
+        <label>Пароль:
+            <input type="password" name="password" required>
+        </label>
+
+        <label>Пол:
+            <input type="radio" name="gender" value="male">
+            <input type="radio" name="gender" value="female">
+        </label>
+
+        <label>Интересы:
+            <input type="checkbox" name="interests" value="music">
+            <input type="checkbox" name="interests" value="sport">
+        </label>
+
+        <label>Страна:
+            <select name="country">
+                <option>Россия</option>
+                <option>США</option>
+                <option>Япония</option>
+            </select>
+        </label>
+    </fieldset>
+</form>
+</body>
+</html>

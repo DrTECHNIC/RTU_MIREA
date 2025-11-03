@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+<section class="tabs">
+    <nav class="tab-list" role="tablist">
+        <a href="#tab1" class="tab" role="tab" aria-controls="tab1" aria-selected="true">
+            HTML
+        </a>
+        <a href="#tab2" class="tab" role="tab" aria-controls="tab2">
+            CSS
+        </a>
+        <a href="#tab3" class="tab" role="tab" aria-controls="tab3">
+            Без JS
+        </a>
+    </nav>
+
+    <div id="tab1" class="tab-content" role="tabpanel" aria-labelledby="tab1">
+        <p>HTML</p>
+    </div>
+
+    <div id="tab2" class="tab-content" role="tabpanel" aria-labelledby="tab2">
+        <p>CSS</p>
+    </div>
+
+    <div id="tab3" class="tab-content" role="tabpanel" aria-labelledby="tab3">
+        <p>Без JS</p>
+    </div>
+</section>
+
+</body>
+</html>
