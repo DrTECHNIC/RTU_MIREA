@@ -1,0 +1,1249 @@
+{
+  "generator": "studioFront",
+  "generated_by_front_version": "1.10.3",
+  "created_by_front_version": "1.10.3",
+  "consumer": "import",
+  "uuid": "94e0b78c-a4f0-4acf-870f-af7d6feba819",
+  "name": "Практика5_ВраженкоДО",
+  "description": "",
+  "nodes_direction": "fromUptoDown",
+  "verbose": false,
+  "clear_log_before_run": false,
+  "default_timeout": null,
+  "py_libraries": [],
+  "rights": [
+    "dr.technic27111985"
+  ],
+  "robot_graphs": [
+    {
+      "name": "Практика5_ВраженкоДО",
+      "uuid": "885cc009-0d27-4cd9-93a6-194c5c14c1b9",
+      "annotation": null,
+      "snippet_robot_uuid": null,
+      "snippet_robot_version_uuid": null,
+      "snippet_meta": null,
+      "snippet_parent_node_uuid": null,
+      "template_meta": null,
+      "template_robot_uuid": null,
+      "template_robot_version_uuid": null,
+      "sha1": "6a20f034223bc3aadcbc9f2c89ddad6577dd52c3",
+      "vars": {
+        "global": [
+          {
+            "name": "RITA_ENV",
+            "uuid": "ded1b4d1-e285-4d10-bc94-653c87698a57",
+            "value": {},
+            "required": false,
+            "data_type": "base.dictionary",
+            "item_type": "base.any",
+            "display_assistant": false
+          },
+          {
+            "name": "exapp_test",
+            "uuid": "af12a3e9-f332-468c-9197-ba0cb657d238",
+            "comment": "Данные по файлу Excel test.xlsx",
+            "required": false,
+            "data_type": "object.excelApp"
+          },
+          {
+            "name": "dt_exapp_test",
+            "uuid": "9df5e1af-e003-48b7-a2fe-e58562250624",
+            "value": {
+              "rows": [],
+              "columns": []
+            },
+            "comment": "Извлеченная из документа таблица",
+            "required": false,
+            "data_type": "object.dataTable"
+          },
+          {
+            "name": "drow_dt_exapp_test",
+            "uuid": "89ef5910-d317-4104-a7b7-a04483b19280",
+            "value": {
+              "row": [],
+              "columns": []
+            },
+            "comment": "Текущая строка данных",
+            "required": false,
+            "data_type": "object.dataRow"
+          },
+          {
+            "name": "fl_cost",
+            "uuid": "33686a86-7153-4453-b6ea-966f7e801b54",
+            "value": "",
+            "comment": "Стоимость текущей строки",
+            "required": false,
+            "data_type": "base.float",
+            "display_assistant": false
+          },
+          {
+            "name": "fl_price",
+            "uuid": "12c66ffa-30eb-4111-8d88-cf9f7b6623c1",
+            "value": "",
+            "comment": "Цена текущей строки",
+            "required": false,
+            "data_type": "base.float",
+            "display_assistant": false
+          },
+          {
+            "name": "fl_weight",
+            "uuid": "746f57fa-b318-4ad0-949c-72fb0511f74f",
+            "value": "",
+            "comment": "Вес текущей строки",
+            "required": false,
+            "data_type": "base.float",
+            "display_assistant": false
+          },
+          {
+            "name": "index_dt_exapp_test",
+            "uuid": "7c78e17d-b5a9-4aec-90a3-a80dfae3d370",
+            "value": 0,
+            "comment": "Индекс текущей строки",
+            "required": false,
+            "data_type": "base.integer",
+            "display_assistant": false
+          },
+          {
+            "name": "str_path_desktop",
+            "uuid": "e8c365b7-342c-4ced-a6a3-214956cfa68d",
+            "value": "",
+            "comment": "Путь к рабочему столу",
+            "required": false,
+            "data_type": "base.string",
+            "display_assistant": false
+          }
+        ]
+      },
+      "id": "garpa@1.0.0",
+      "nodes": {
+        "1": {
+          "id": 1,
+          "data": {
+            "uuid": "b08e5b58-e79a-4fd3-a0b3-43eef2afd846",
+            "vars": {
+              "inputs": [],
+              "outputs": []
+            },
+            "title": "Старт",
+            "input_socket_position": "top",
+            "output_socket_position": "bottom"
+          },
+          "inputs": {},
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 4,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            12.789872057089113,
+            -384.81153426988936
+          ],
+          "name": "base.start"
+        },
+        "2": {
+          "id": 2,
+          "data": {
+            "uuid": "da2a4259-004e-4422-8877-2dd5562ca17e",
+            "vars": {
+              "inputs": [],
+              "outputs": []
+            },
+            "title": "Финиш",
+            "input_socket_position": "top",
+            "output_socket_position": "bottom"
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 131,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {},
+          "position": [
+            272.7898720570891,
+            1304.1647997572923
+          ],
+          "name": "base.finish"
+        },
+        "3": {
+          "id": 3,
+          "data": {
+            "uuid": "b981a84a-3d16-451e-a44a-63e83c1bdf9a",
+            "vars": {
+              "inputs": [
+                {
+                  "name": "use_app",
+                  "uuid": "c350e84c-2b08-41e8-aa3d-c16e1fc936e8",
+                  "value": true,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "workbook_path",
+                  "uuid": "0eb65a8b-5460-431f-bc39-23ce1db99919",
+                  "value": "f\"{str_path_desktop}\\\\Практическое_задание_1.xlsx\"",
+                  "data_type": "base.string",
+                  "expression": true
+                },
+                {
+                  "name": "create_if_none",
+                  "uuid": "e014790c-6693-4b2d-b2d2-2f06e99fca2c",
+                  "value": false,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "password",
+                  "uuid": "d56c4805-47e8-494e-a163-9ca1e884f8a3",
+                  "value": "",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "edit_password",
+                  "uuid": "5a6fc0dd-93fd-45b3-bd35-563210dae59f",
+                  "value": "",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "macro_setting",
+                  "uuid": "9852ee1c-ce4c-4eb0-84cf-6a7627492c95",
+                  "value": "ENABLE",
+                  "data_type": "base.enum"
+                },
+                {
+                  "name": "read_only",
+                  "uuid": "390e4b5a-e989-458f-bbd9-1f9a322d8cf5",
+                  "value": false,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "save_each_action",
+                  "uuid": "57bf2eb6-6e33-4793-9a3a-559c749a7133",
+                  "value": true,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "visible_operations",
+                  "uuid": "fdfa7f69-33da-427d-8e41-00e8485f949b",
+                  "value": true,
+                  "data_type": "base.bool"
+                }
+              ],
+              "outputs": [
+                {
+                  "ref": "af12a3e9-f332-468c-9197-ba0cb657d238",
+                  "name": "excel_app",
+                  "uuid": "5e78d4df-65e5-40cc-80a7-2108ea07ba55",
+                  "value": "",
+                  "data_type": "object.excelApp"
+                },
+                {
+                  "ref": "",
+                  "name": "excel_file",
+                  "uuid": "04905c06-a3f1-4557-a916-635ab30ed317",
+                  "value": "",
+                  "data_type": "object.excelFile"
+                }
+              ]
+            },
+            "title": "Открыть Практическая_задание_1.xlsx",
+            "version": 2,
+            "base_name": "excel.open_excel",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 4,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 12,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -173.2101279429109,
+            -98.29846892267474
+          ],
+          "name": "excel.open_excel.2"
+        },
+        "4": {
+          "id": 4,
+          "data": {
+            "uuid": "a98e36aa-c65b-4dcf-a9c5-978309989af2",
+            "vars": {
+              "inputs": [
+                {
+                  "name": "folder_name",
+                  "uuid": "b656ed17-6168-46ae-a589-8bdf39a37bc5",
+                  "value": "Desktop",
+                  "data_type": "base.string"
+                }
+              ],
+              "outputs": [
+                {
+                  "ref": "e8c365b7-342c-4ced-a6a3-214956cfa68d",
+                  "name": "folder_path",
+                  "uuid": "5a870368-137e-43f0-bf19-1d5bf923e7b0",
+                  "data_type": "base.string"
+                }
+              ]
+            },
+            "title": "Получить адрес рабочего стола",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 1,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 3,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -173.2101279429109,
+            -288.54906252508147
+          ],
+          "name": "system.get_env_folder"
+        },
+        "12": {
+          "id": 12,
+          "data": {
+            "uuid": "bb7ae3fb-a8b3-43bc-b770-df36b3b39bba",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "af12a3e9-f332-468c-9197-ba0cb657d238",
+                  "name": "excel_settings",
+                  "uuid": "428fe7f8-81ce-4b70-897b-e2dea89e51b0",
+                  "data_type": "object.excelApp"
+                },
+                {
+                  "name": "sheet",
+                  "uuid": "d7e11c88-4cfe-498e-9722-98427b32ab89",
+                  "value": "Лист1",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "range",
+                  "uuid": "321c77b0-2753-467d-b651-cfe23aba3a51",
+                  "value": "",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "columns",
+                  "uuid": "f35fd276-0c08-4390-9de7-eecacee3671d",
+                  "value": "",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "rows",
+                  "uuid": "18824821-506b-437b-8ad5-c58ecae55cd9",
+                  "value": "",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "add_headers",
+                  "uuid": "d1038f4f-08c5-49ad-bce3-d7837c43ed3e",
+                  "value": true,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "use_filter",
+                  "uuid": "339819de-08b7-4c01-900c-49ad418540bc",
+                  "value": false,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "ignore_empty",
+                  "uuid": "58270f3d-119f-45d8-8002-aa6d489353f5",
+                  "value": false,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "read_as_string",
+                  "uuid": "9d1e614e-b2c7-4e6b-9427-bd898bd60a98",
+                  "value": false,
+                  "data_type": "base.bool"
+                }
+              ],
+              "outputs": [
+                {
+                  "ref": "9df5e1af-e003-48b7-a2fe-e58562250624",
+                  "name": "result",
+                  "uuid": "67e24732-7009-456d-8813-1f3311e93ec7",
+                  "data_type": "object.dataTable"
+                }
+              ]
+            },
+            "title": "Прочитать диапазон",
+            "version": 5,
+            "base_name": "excel.read_range",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 3,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 127,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -173.2101279429109,
+            118.89999852853508
+          ],
+          "name": "excel.read_range.5"
+        },
+        "127": {
+          "id": 127,
+          "data": {
+            "uuid": "288f3fc6-65b1-4135-bd49-8fa0ef83e59c",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "9df5e1af-e003-48b7-a2fe-e58562250624",
+                  "name": "entity",
+                  "uuid": "ad061bcd-9437-436c-a913-55f899e07f77",
+                  "data_type": "object.dataTable"
+                },
+                {
+                  "name": "level",
+                  "uuid": "7964cc83-5853-42e8-b569-0145fcb0b405",
+                  "value": "INFO",
+                  "data_type": "base.enum"
+                },
+                {
+                  "name": "send_to_orchestrator",
+                  "uuid": "3e18fe28-166f-4e49-9954-a89304472139",
+                  "value": true,
+                  "data_type": "base.bool"
+                }
+              ],
+              "outputs": []
+            },
+            "title": "Вывод в консоль dt_exapp_test",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 12,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 129,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -173.2101279429109,
+            339.4103346824107
+          ],
+          "name": "base.console_output"
+        },
+        "129": {
+          "id": 129,
+          "data": {
+            "uuid": "6c0b1b52-c3b8-4523-819d-5d0b35797a8e",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "9df5e1af-e003-48b7-a2fe-e58562250624",
+                  "name": "collection",
+                  "uuid": "b0d08bb4-8e5e-4960-86a4-22ca676bbd4c",
+                  "data_type": "object.dataTable"
+                }
+              ],
+              "outputs": [
+                {
+                  "ref": "89ef5910-d317-4104-a7b7-a04483b19280",
+                  "name": "loop_variable_name",
+                  "uuid": "cac18c9a-6fb5-4989-b140-9e81c1e1bb1d",
+                  "data_type": "base.any"
+                },
+                {
+                  "ref": "",
+                  "name": "loop_index",
+                  "uuid": "add3b780-08a9-4284-a3d2-79cc479a386c",
+                  "data_type": "base.integer"
+                }
+              ]
+            },
+            "title": "Цикл для каждой строки",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 127,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "loop_body_exec": {
+              "connections": [
+                {
+                  "node": 183,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            },
+            "completed_exec": {
+              "connections": [
+                {
+                  "node": 130,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -173.2101279429109,
+            529.8445622878183
+          ],
+          "name": "base.for_in_loop"
+        },
+        "130": {
+          "id": 130,
+          "data": {
+            "uuid": "f3642b72-9b1c-4c43-b792-51936094ed5a",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "af12a3e9-f332-468c-9197-ba0cb657d238",
+                  "name": "excel_settings",
+                  "uuid": "968cae22-b37b-47ce-afff-c69392da999c",
+                  "data_type": "object.excelApp"
+                },
+                {
+                  "name": "sheet",
+                  "uuid": "bff4ce30-7a90-4c79-9b9d-ae534dfc5ea1",
+                  "value": "Лист1",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "starting_cell",
+                  "uuid": "ebd9061e-e4dd-4195-9ab6-d7f2995dc361",
+                  "value": "",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "append_range",
+                  "uuid": "0438be7b-3cf2-4ecf-bc8c-c376bc37affe",
+                  "value": false,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "source",
+                  "uuid": "4f85b39d-a11a-4821-953e-458ab6539f39",
+                  "value": "VALUE",
+                  "data_type": "base.enum"
+                },
+                {
+                  "ref": "9df5e1af-e003-48b7-a2fe-e58562250624",
+                  "name": "data_table",
+                  "uuid": "7d7f7947-471c-4ae2-a9be-7e62152e3ca2",
+                  "value": "",
+                  "data_type": "object.dataTable"
+                },
+                {
+                  "name": "add_headers",
+                  "uuid": "b73192d0-8593-4bdd-8de8-fd710f2dbbef",
+                  "value": true,
+                  "data_type": "base.bool"
+                },
+                {
+                  "name": "apply_excel_format",
+                  "uuid": "58146792-9c11-46e2-a0a2-90b3ce1874cc",
+                  "value": true,
+                  "data_type": "base.bool"
+                }
+              ],
+              "outputs": []
+            },
+            "title": "Записать диапазон на Лист1",
+            "version": 3,
+            "base_name": "excel.write_range",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 129,
+                  "output": "completed_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 131,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            86.7898720570891,
+            826.7225198936021
+          ],
+          "name": "excel.write_range.3"
+        },
+        "131": {
+          "id": 131,
+          "data": {
+            "uuid": "7eb928d0-5502-42c2-ad4c-771c298001e1",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "e8c365b7-342c-4ced-a6a3-214956cfa68d",
+                  "name": "workbook_path",
+                  "uuid": "42d6b644-0e95-4bf0-8bb0-4aea133d7b19",
+                  "data_type": "base.string"
+                },
+                {
+                  "ref": "af12a3e9-f332-468c-9197-ba0cb657d238",
+                  "name": "excel_settings",
+                  "uuid": "610ddc22-50d5-44d4-a2d9-99c6bdc598d4",
+                  "data_type": "object.excelApp"
+                }
+              ],
+              "outputs": []
+            },
+            "title": "Закрыть Практическое_задание_.xlsx",
+            "version": 2,
+            "base_name": "excel.close_excel",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 130,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 2,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            86.7898720570891,
+            1113.256253192321
+          ],
+          "name": "excel.close_excel.2"
+        },
+        "183": {
+          "id": 183,
+          "data": {
+            "uuid": "8e523392-b56d-46f6-b88c-2f9d585a7ffb",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "9df5e1af-e003-48b7-a2fe-e58562250624",
+                  "name": "datatable",
+                  "uuid": "cce1c71d-dc24-4329-93e9-6c0c3d1edad1",
+                  "data_type": "object.dataTable"
+                },
+                {
+                  "name": "row",
+                  "uuid": "bdd43e41-d1dd-4e06-8548-3395996d9748",
+                  "data_type": "object.dataRow"
+                },
+                {
+                  "ref": "7c78e17d-b5a9-4aec-90a3-a80dfae3d370",
+                  "name": "row_index",
+                  "uuid": "2fe26d58-3842-49e9-af64-5d2120d95db3",
+                  "data_type": "base.integer"
+                },
+                {
+                  "name": "column_name",
+                  "uuid": "ad02608b-06c0-47fa-a5da-0f59cf64eacc",
+                  "value": "Вес",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "column_index",
+                  "uuid": "b84e4935-57b1-42f0-a646-a2a4885aca24",
+                  "data_type": "base.integer"
+                }
+              ],
+              "outputs": [
+                {
+                  "ref": "746f57fa-b318-4ad0-949c-72fb0511f74f",
+                  "name": "value",
+                  "uuid": "67a01363-1826-4567-ab12-c6e9ced6f665",
+                  "data_type": "base.float"
+                }
+              ]
+            },
+            "title": "Получить значение ячейки Вес",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 129,
+                  "output": "loop_body_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 184,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -373.2101279429109,
+            822.9353447355539
+          ],
+          "name": "datatable.get_row_item"
+        },
+        "184": {
+          "id": 184,
+          "data": {
+            "uuid": "3f519565-94a2-4e65-896d-4e4ecb868d52",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "9df5e1af-e003-48b7-a2fe-e58562250624",
+                  "name": "datatable",
+                  "uuid": "24983cd6-5091-4913-aa02-6282394161c3",
+                  "data_type": "object.dataTable"
+                },
+                {
+                  "name": "row",
+                  "uuid": "986f2819-d7ca-4a19-b74e-ef7df52aec7b",
+                  "data_type": "object.dataRow"
+                },
+                {
+                  "ref": "7c78e17d-b5a9-4aec-90a3-a80dfae3d370",
+                  "name": "row_index",
+                  "uuid": "2de45199-479b-43cc-bf5b-95cccdcea0f0",
+                  "data_type": "base.integer"
+                },
+                {
+                  "name": "column_name",
+                  "uuid": "6eb6c48e-9d84-4e48-bb8d-b29d5a069d14",
+                  "value": "Цена",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "column_index",
+                  "uuid": "a3244b7b-2b43-45c4-bf3e-0713c0923f23",
+                  "data_type": "base.integer"
+                }
+              ],
+              "outputs": [
+                {
+                  "ref": "746f57fa-b318-4ad0-949c-72fb0511f74f",
+                  "name": "value",
+                  "uuid": "189c7676-423a-4d59-b7b1-6464139d960f",
+                  "data_type": "base.float"
+                }
+              ]
+            },
+            "title": "Получить значение ячейки Цена",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 183,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 185,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -373.2101279429109,
+            1072.289535315505
+          ],
+          "name": "datatable.get_row_item"
+        },
+        "185": {
+          "id": 185,
+          "data": {
+            "uuid": "5f4a16cd-e5e8-4831-845b-372f18eddf00",
+            "vars": {
+              "inputs": [
+                {
+                  "name": "value",
+                  "uuid": "2fc665c2-d279-4905-8042-97ddba57f78d",
+                  "value": "fl_weight * fl_price",
+                  "data_type": "base.any",
+                  "expression": true
+                }
+              ],
+              "outputs": [
+                {
+                  "ref": "33686a86-7153-4453-b6ea-966f7e801b54",
+                  "name": "variable",
+                  "uuid": "880a96d1-0c5e-49e7-bc3b-a2ddb9d76fd2",
+                  "data_type": "base.any"
+                }
+              ]
+            },
+            "title": "Стоимость товара",
+            "version": 3,
+            "base_name": "base.assign",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 184,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 186,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -373.2101279429109,
+            1321.126883401698
+          ],
+          "name": "base.assign.3"
+        },
+        "186": {
+          "id": 186,
+          "data": {
+            "uuid": "02a39e77-caf2-405a-a22e-4225756cd523",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "9df5e1af-e003-48b7-a2fe-e58562250624",
+                  "name": "datatable",
+                  "uuid": "a047bcd8-3848-42a1-a25e-8b2cf4756175",
+                  "data_type": "object.dataTable"
+                },
+                {
+                  "name": "row",
+                  "uuid": "9ca43ada-5614-4157-ac00-d623e7113075",
+                  "value": "",
+                  "data_type": "object.dataRow"
+                },
+                {
+                  "ref": "7c78e17d-b5a9-4aec-90a3-a80dfae3d370",
+                  "name": "row_index",
+                  "uuid": "e689321b-e5fc-48ef-91f7-3d9c1c57aeb9",
+                  "data_type": "base.integer"
+                },
+                {
+                  "name": "column_name",
+                  "uuid": "49b27c99-d624-446e-8f02-1ae8a1776bf1",
+                  "value": "Стоимость",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "column_index",
+                  "uuid": "63584a34-6226-46f2-a73e-f520b2de0ea9",
+                  "value": null,
+                  "data_type": "base.integer"
+                },
+                {
+                  "ref": "33686a86-7153-4453-b6ea-966f7e801b54",
+                  "name": "value",
+                  "uuid": "2be75bfd-54a2-4cd4-b4e9-d825e477b2ed",
+                  "data_type": "base.any"
+                }
+              ],
+              "outputs": [
+                {
+                  "ref": "",
+                  "name": "resulted_datatable",
+                  "uuid": "c94f158d-3aa5-4b25-9fa9-fe650a351383",
+                  "data_type": "object.dataTable"
+                }
+              ]
+            },
+            "title": "Обновить значение Стоимость",
+            "version": 2,
+            "base_name": "datatable.update_row_item",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 185,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": [
+                {
+                  "node": 188,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "position": [
+            -373.2101279429109,
+            1506.8579796655408
+          ],
+          "name": "datatable.update_row_item.2"
+        },
+        "188": {
+          "id": 188,
+          "data": {
+            "uuid": "edb1735b-5477-4529-9f75-0452753dadae",
+            "vars": {
+              "inputs": [
+                {
+                  "name": "condition",
+                  "uuid": "95b1d403-25c5-4651-ad19-85f7466b28ea",
+                  "value": "fl_cost > 100",
+                  "data_type": "base.string",
+                  "expression": true
+                }
+              ],
+              "outputs": []
+            },
+            "title": "Условие: Стоимость > 100?",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 186,
+                  "output": "out_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "true_exec": {
+              "connections": [
+                {
+                  "node": 189,
+                  "input": "in_exec",
+                  "data": {}
+                }
+              ]
+            },
+            "false_exec": {
+              "connections": []
+            },
+            "out_exec": {
+              "connections": []
+            }
+          },
+          "position": [
+            -373.2101279429109,
+            1754.0178259390987
+          ],
+          "name": "base.branch"
+        },
+        "189": {
+          "id": 189,
+          "data": {
+            "uuid": "3d0ca7b2-5bba-46ed-816d-3bde45fb7cc4",
+            "vars": {
+              "inputs": [
+                {
+                  "ref": "af12a3e9-f332-468c-9197-ba0cb657d238",
+                  "name": "excel_settings",
+                  "uuid": "8211f1c9-01e6-4a6a-851c-402e3ad59547",
+                  "data_type": "object.excelApp"
+                },
+                {
+                  "name": "sheet",
+                  "uuid": "9b2db91b-a7c8-4d6c-9f6d-381e7d39ef19",
+                  "value": "Лист1",
+                  "data_type": "base.string"
+                },
+                {
+                  "name": "range",
+                  "uuid": "93d7f731-e266-4d77-ac13-dc35d8a8c0c2",
+                  "value": "f\"E{index_dt_exapp_test + 2}\"",
+                  "data_type": "base.string",
+                  "expression": true
+                },
+                {
+                  "name": "color",
+                  "uuid": "9393a81b-9860-4de1-aaa5-d1c3f90aa3b5",
+                  "value": "#ffff00",
+                  "data_type": "base.string"
+                }
+              ],
+              "outputs": []
+            },
+            "title": "Закрасить ячейку в желтый цвет",
+            "version": 2,
+            "base_name": "excel.set_range_color",
+            "title_fold_height": 22,
+            "input_socket_position": "top",
+            "output_socket_position": "bottom",
+            "title_max_lines_number": 1
+          },
+          "inputs": {
+            "in_exec": {
+              "connections": [
+                {
+                  "node": 188,
+                  "output": "true_exec",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "outputs": {
+            "out_exec": {
+              "connections": []
+            }
+          },
+          "position": [
+            -630.0101157358797,
+            1935.1080317209066
+          ],
+          "name": "excel.set_range_color.2"
+        }
+      }
+    }
+  ],
+  "is_snippet": false,
+  "is_template": false,
+  "breakpoints": [],
+  "disabled_nodes": [],
+  "opened_graphs": [
+    "885cc009-0d27-4cd9-93a6-194c5c14c1b9"
+  ],
+  "own_nodes": {},
+  "expanded_nodes": [
+    "b981a84a-3d16-451e-a44a-63e83c1bdf9a",
+    "a98e36aa-c65b-4dcf-a9c5-978309989af2",
+    "bb7ae3fb-a8b3-43bc-b770-df36b3b39bba",
+    "288f3fc6-65b1-4135-bd49-8fa0ef83e59c",
+    "6c0b1b52-c3b8-4523-819d-5d0b35797a8e",
+    "f3642b72-9b1c-4c43-b792-51936094ed5a",
+    "7eb928d0-5502-42c2-ad4c-771c298001e1",
+    "8e523392-b56d-46f6-b88c-2f9d585a7ffb",
+    "3f519565-94a2-4e65-896d-4e4ecb868d52",
+    "5f4a16cd-e5e8-4831-845b-372f18eddf00",
+    "02a39e77-caf2-405a-a22e-4225756cd523",
+    "edb1735b-5477-4529-9f75-0452753dadae",
+    "3d0ca7b2-5bba-46ed-816d-3bde45fb7cc4"
+  ],
+  "linked_accounts": [],
+  "snippet_robots": [],
+  "generated_at": "2025-11-11T08:12:41.208Z",
+  "latest_robot_version_uuid": "718ec028-2651-4c97-878c-5cec145ac5db",
+  "latest_robot_version": {
+    "uuid": "718ec028-2651-4c97-878c-5cec145ac5db",
+    "robot_uuid": "94e0b78c-a4f0-4acf-870f-af7d6feba819",
+    "robot_history_sha1": "9201b5cd57d142a3326af858a71ffdd18a89b06d",
+    "commit_message": "",
+    "created_by": 2132,
+    "created_at": "2025-11-11T08:12:31.352Z",
+    "version_num": "0.127",
+    "version_type": "minor",
+    "is_published": false,
+    "createdByUser": {
+      "id": 2132,
+      "name": "Враженко Даниил Олегович",
+      "login": "dr.technic27111985",
+      "email": "dr.technic27111985@gmail.com",
+      "is_active": true
+    },
+    "robot_history": {
+      "sha1": "9201b5cd57d142a3326af858a71ffdd18a89b06d",
+      "data": {
+        "name": "Практика5_ВраженкоДО",
+        "verbose": false,
+        "is_snippet": false,
+        "breakpoints": [],
+        "description": "",
+        "is_template": false,
+        "py_libraries": [],
+        "opened_graphs": [
+          "885cc009-0d27-4cd9-93a6-194c5c14c1b9"
+        ],
+        "disabled_nodes": [],
+        "expanded_nodes": [
+          "b981a84a-3d16-451e-a44a-63e83c1bdf9a",
+          "a98e36aa-c65b-4dcf-a9c5-978309989af2",
+          "bb7ae3fb-a8b3-43bc-b770-df36b3b39bba",
+          "288f3fc6-65b1-4135-bd49-8fa0ef83e59c",
+          "6c0b1b52-c3b8-4523-819d-5d0b35797a8e",
+          "f3642b72-9b1c-4c43-b792-51936094ed5a",
+          "7eb928d0-5502-42c2-ad4c-771c298001e1",
+          "8e523392-b56d-46f6-b88c-2f9d585a7ffb",
+          "3f519565-94a2-4e65-896d-4e4ecb868d52",
+          "5f4a16cd-e5e8-4831-845b-372f18eddf00",
+          "02a39e77-caf2-405a-a22e-4225756cd523",
+          "edb1735b-5477-4529-9f75-0452753dadae",
+          "3d0ca7b2-5bba-46ed-816d-3bde45fb7cc4"
+        ],
+        "default_timeout": null,
+        "linked_accounts": [],
+        "nodes_direction": "fromUptoDown",
+        "clear_log_before_run": false,
+        "created_by_front_version": "1.10.3",
+        "generated_by_front_version": "1.10.3"
+      }
+    }
+  },
+  "latest_published_robot_version": null,
+  "latest_published_robot_version_uuid": null
+}
