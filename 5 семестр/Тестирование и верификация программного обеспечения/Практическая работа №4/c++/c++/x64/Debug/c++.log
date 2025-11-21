@@ -1,0 +1,4 @@
+﻿  c++.cpp
+C:\Users\wrada\OneDrive\Рабочий стол\Тест4\c++\c++\c++.cpp(56,23): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\wrada\OneDrive\Рабочий стол\Тест4\c++\c++\c++.cpp(84,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  c++.vcxproj -> C:\Users\wrada\OneDrive\Рабочий стол\Тест4\c++\x64\Debug\c++.exe
