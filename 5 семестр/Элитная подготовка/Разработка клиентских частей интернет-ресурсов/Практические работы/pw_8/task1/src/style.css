@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+}
+
+.content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background: #fff;
+    border-radius: 16px;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card img.main-image {
+    width: calc(50% - 8px);
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.card .content-wrapper {
+    width: calc(50% - 8px);
+    padding: 8px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.Text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.Text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.Text p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.Author {
+    width: 100%;
+    padding: 16px;
+    background: #F5F5F5;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+.Author img.avatar {
+    flex-shrink: 0;
+    width: 48px;
+    aspect-ratio: 1 / 1;
+    clip-path: circle(50%);
+    object-fit: cover;
+}
+
+.Author .author-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Author .author-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.Author .author-info p {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.Author img.icon {
+    flex-shrink: 0;
+    width: 24px;
+    aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
