@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    max-width: 900px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.calculator {
+    flex: 1;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-width: 320px;
+    max-width: 400px;
+}
+
+.display {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.expression-container {
+    position: relative;
+    width: 100%;
+    min-height: 30px;
+    overflow: hidden;
+}
+
+#expression {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: text;
+    text-align: right;
+    position: relative;
+    z-index: 1;
+    caret-color: #4dabf7;
+}
+
+#expression:focus {
+    outline: none;
+}
+
+#result {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    min-height: 1.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    border: none;
+    padding: 18px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #e9ecef;
+    color: #333;
+    min-height: 60px;
+}
+
+button:hover {
+    background: #dee2e6;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button[data-action] {
+    background: #4dabf7;
+    color: white;
+}
+
+button[data-action]:hover {
+    background: #339af0;
+}
+
+button[data-action="calculate"] {
+    background: #40c057;
+    color: white;
+}
+
+button[data-action="calculate"]:hover {
+    background: #2f9e44;
+}
+
+.history {
+    flex: 1;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-width: 280px;
+}
+
+.history h3 {
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+#history-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.history-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-left: 4px solid #4dabf7;
+}
+
+.history-item:hover {
+    background: #e9ecef;
+}
+
+.history-expression {
+    font-size: 0.9em;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-result {
+    font-weight: bold;
+    color: #333;
+    margin-top: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#clear-history {
+    width: 100%;
+    background: #ff6b6b;
+    color: white;
+    padding: 12px;
+}
+
+#clear-history:hover {
+    background: #fa5252;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .calculator {
+        min-width: unset;
+        max-width: unset;
+        width: 100%;
+    }
+
+    .history {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .display {
+        min-height: 80px;
+        padding: 15px;
+    }
+
+    #result {
+        font-size: 1.7em;
+    }
+
+    button {
+        padding: 15px;
+        min-height: 50px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #result {
+        font-size: 1.5em;
+    }
+
+    button {
+        padding: 12px;
+        min-height: 45px;
+        font-size: 1em;
+    }
+
+    .display {
+        min-height: 70px;
+        padding: 12px;
+    }
+}

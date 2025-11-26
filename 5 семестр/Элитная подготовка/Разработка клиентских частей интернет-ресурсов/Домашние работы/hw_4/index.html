@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="calculator">
+        <div class="display">
+            <div class="expression-container">
+                <input type="text" id="expression" readonly>
+            </div>
+            <div id="result"></div>
+        </div>
+        <div class="buttons">
+            <!-- Строка 1 -->
+            <button data-action="clear">C</button>
+            <button data-action="backspace">⌫</button>
+            <button data-action="percent">%</button>
+            <button data-action="power">x²</button>
+            <!-- Строка 2 -->
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-action="divide">/</button>
+            <!-- Строка 3 -->
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-action="multiply">×</button>
+            <!-- Строка 4 -->
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-action="subtract">-</button>
+            <!-- Строка 5 -->
+            <button data-value="0">0</button>
+            <button data-value=".">.</button>
+            <button data-action="calculate">=</button>
+            <button data-action="add">+</button>
+        </div>
+    </div>
+    <div class="history">
+        <h3>История вычислений</h3>
+        <div id="history-list"></div>
+        <button id="clear-history">Очистить историю</button>
+    </div>
+</div>
+<script src="./src/script.js"></script>
+</body>
+</html>
