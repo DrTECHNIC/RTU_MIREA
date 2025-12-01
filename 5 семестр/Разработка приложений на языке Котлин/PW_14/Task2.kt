@@ -1,7 +1,6 @@
 import java.util.Scanner
 
 object Task2 {
-    // Изменяем data class на список ассоциативных массивов (Map) как требуется в задании
     private val entries = listOf(
         mapOf(
             "text" to "❝ Фира! Все. Антракт! Хватит греть уши! ❞",
