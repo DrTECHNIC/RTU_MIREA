@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="form-container">
+        <div class="header">
+            <h1><i class="fas fa-user-plus"></i> Регистрация</h1>
+            <p>Создайте новую учетную запись</p>
+        </div>
+
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Имя</label>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+                <div class="error-message" id="nameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="text" id="email" name="email" placeholder="Введите ваш email">
+                <div class="error-message" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="age"><i class="fas fa-birthday-cake"></i> Возраст</label>
+                <input type="number" id="age" name="age" min="1" placeholder="Введите ваш возраст">
+                <div class="error-message" id="ageError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password"><i class="fas fa-lock"></i> Пароль</label>
+                <input type="password" id="password" name="password" placeholder="Введите пароль">
+                <div class="error-message" id="passwordError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword"><i class="fas fa-lock"></i> Подтверждение пароля</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль">
+                <div class="error-message" id="confirmPasswordError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="role"><i class="fas fa-user-tag"></i> Роль</label>
+                <select id="role" name="role">
+                    <option value="">Выберите роль</option>
+                    <option value="user">Пользователь</option>
+                    <option value="admin">Админ</option>
+                    <option value="manager">Менеджер</option>
+                </select>
+                <div class="error-message" id="roleError"></div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Зарегистрироваться
+                </button>
+                <button type="button" class="reset-btn" id="resetBtn">
+                    <i class="fas fa-redo"></i> Сброс формы
+                </button>
+            </div>
+
+            <div class="form-footer">
+                <p>Уже есть аккаунт? <a href="#">Войти</a></p>
+            </div>
+        </form>
+
+        <div class="validation-summary" id="validationSummary"></div>
+
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <h3>Регистрация успешно завершена!</h3>
+            <p>Ваши данные были отправлены на сервер.</p>
+            <button id="newRegistrationBtn">Новая регистрация</button>
+        </div>
+    </div>
+
+    <div class="info-panel">
+        <h2><i class="fas fa-info-circle"></i> Требования к регистрации</h2>
+        <ul>
+            <li><i class="fas fa-check"></i> Имя: минимум 2 символа</li>
+            <li><i class="fas fa-check"></i> Email: корректный формат</li>
+            <li><i class="fas fa-check"></i> Возраст: не менее 18 лет</li>
+            <li><i class="fas fa-check"></i> Пароль: минимум 6 символов</li>
+            <li><i class="fas fa-check"></i> Пароли должны совпадать</li>
+            <li><i class="fas fa-check"></i> Роль: должна быть выбрана</li>
+        </ul>
+
+        <div class="demo-accounts">
+            <h3><i class="fas fa-users"></i> Тестовые данные:</h3>
+            <p>Имя: <span class="demo-data">Алексей (минимум 2 символа)</span></p>
+            <p>Email: <span class="demo-data">example@mail.com</span></p>
+            <p>Возраст: <span class="demo-data">25 (минимум 18)</span></p>
+            <p>Пароль: <span class="demo-data">пароль123 (минимум 6 символов)</span></p>
+        </div>
+    </div>
+</div>
+
+<script src="src/script.ts"></script>
+</body>
+</html>
